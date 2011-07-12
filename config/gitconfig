@@ -9,13 +9,15 @@
 	st = status -sb
 	dc = diff --cached
 	gl = log --oneline --decorate --stat --graph
+	ca = commit --amend
 [color "status"]
 	added = yellow
 	changed = green
 [color "diff"]
-	meta = yellow bold
+	meta = cyan bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
 [user]
 	name = Mark Story
+	email = mark@freshbooks.com
