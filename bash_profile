@@ -1,8 +1,7 @@
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
 
 # Aliases
-alias ls='ls -G'
-alias ll='ls -laoh'
+. ~/.dotfiles/section/aliases.sh
 
 # Editors
 export EDITOR=vim
@@ -18,4 +17,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 # load appearance settings.
-. ./appearance.sh
+. ~/.dotfiles/section/appearance.sh
+
+# history
+. ~/.dotfiles/section/history.sh
