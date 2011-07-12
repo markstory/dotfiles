@@ -1,0 +1,7 @@
+--type-add
+php=tpl
+--type-add
+php=twig
+--type-add
+python=migration
+

@@ -1,0 +1,8 @@
+[color]
+	branch  = auto
+	diff = auto
+	status = auto
+[alias]
+	st = status -sb
+	dc = diff --cached
+	gl = log --oneline --decorate --stat --graph
