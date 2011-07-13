@@ -2,6 +2,9 @@
 
 # Aliases for various tools
 
+# coloured ssh
+alias ssh='colorssh'
+
 # ls
 alias ls='ls -FG'
 alias ll='ls -laoh'
