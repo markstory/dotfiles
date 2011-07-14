@@ -1,0 +1,15 @@
+[ui]
+username = Mark Story <mark@mark-story.com>
+verbose = True
+
+[extensions]
+mq =
+hgext.graphlog = 
+color =
+pager =
+
+[color]
+mode = auto
+
+[pager]
+pager = LESS='FSRX' less
