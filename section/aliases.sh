@@ -9,7 +9,9 @@ alias ssh='colorssh'
 alias ls='ls -FG'
 alias ll='ls -laoh'
 
-
+# mysql
+alias mysql='mysql5'
+alias mysqldump='mysql5dump'
 
 # git extras
 alias gap="git add -p"
