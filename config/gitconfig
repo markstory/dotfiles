@@ -6,9 +6,10 @@
 	br = branch
 	co = checkout
 	df = diff
-	st = status -sb
+	st = status -sb -uno
 	dc = diff --cached
 	gl = log --oneline --decorate --stat --graph
+	lc = log ORIG_HEAD.. --stat --no-merges
 	ca = commit --amend
 [color "status"]
 	added = yellow
