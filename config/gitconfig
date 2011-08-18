@@ -8,7 +8,7 @@
 	df = diff
 	st = status -sb -uno
 	dc = diff --cached
-	gl = log --oneline --decorate --stat --graph
+	gl = log --pretty=short --decorate=short --graph
 	lc = log ORIG_HEAD.. --stat --no-merges
 	ca = commit --amend
 [color "status"]
@@ -22,3 +22,5 @@
 [user]
 	name = Mark Story
 	email = mark@freshbooks.com
+[push]
+	default = current
