@@ -3,7 +3,7 @@
 # Aliases for various tools
 
 # coloured ssh
-alias ssh='colorssh'
+#alias ssh='colorssh'
 
 # ls
 alias ls='ls -FG'
@@ -15,6 +15,7 @@ alias mysqldump='mysql5dump'
 
 # git extras
 alias gap="git add -p"
+alias vim='mvim -v'
 
 # Does a rebase pull + stash so I can be extra lazy.
 # 
