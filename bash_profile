@@ -8,9 +8,9 @@ export PATH
 . ~/.dotfiles/section/aliases.sh
 
 # Editors
-export EDITOR=vim
-export SVN_EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR='mvim -v'
+export SVN_EDITOR='mvim -v'
+export GIT_EDITOR='mvim -v'
 
 # Node
 export NODE_PATH='/usr/local/lib/node'
