@@ -17,6 +17,8 @@ alias mysqldump='mysql5dump'
 alias gap="git add -p"
 alias vim='mvim -v'
 
+alias ssh="$DOTFILES_DIR/bin/colorssh"
+
 # Does a rebase pull + stash so I can be extra lazy.
 # 
 # usage: gpull origin

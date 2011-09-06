@@ -3,6 +3,7 @@ if [ -d "/usr/local/Cellar/ruby/1.9.2-p136/bin" ]; then
 	PATH="$PATH:/usr/local/Cellar/ruby/1.9.2-p136/bin"
 fi
 export PATH
+export DOTFILES_DIR="$HOME/.dotfiles"
 
 # Aliases
 . ~/.dotfiles/section/aliases.sh
