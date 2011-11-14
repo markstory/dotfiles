@@ -4,4 +4,6 @@ php=tpl
 php=twig
 --type-add
 python=migration
+--type-add
+php=ctp
 
