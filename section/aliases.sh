@@ -13,11 +13,20 @@ alias ll='ls -laoh'
 alias mysql='mysql5'
 alias mysqldump='mysql5dump'
 
-# git extras
-alias gap="git add -p"
+# ps
+alias psg="ps aux | grep $1"
+
+# tail
+alias tf="tail -f"
+
+# vim 
 alias vim='mvim -v'
 
+# ssh
 alias ssh="$DOTFILES_DIR/bin/colorssh"
+
+# git extras
+alias gap="git add -p"
 
 # Does a rebase pull + stash so I can be extra lazy.
 # 
