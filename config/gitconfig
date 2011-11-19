@@ -5,12 +5,15 @@
 [alias]
 	br = branch
 	co = checkout
+	ci = commit
 	df = diff
 	st = status -sb -uno
 	dc = diff --cached
 	gl = log --pretty=short --decorate=short --graph
 	lc = log ORIG_HEAD.. --stat --no-merges
 	ca = commit --amend
+	nb = checkout -b
+	cp = cherry-pick
 [color "status"]
 	added = yellow
 	changed = green
@@ -21,6 +24,8 @@
 	new = green bold
 [user]
 	name = Mark Story
-	email = mark@freshbooks.com
+	email = mark@mark-story.com
+[github]
+	user = markstory
 [push]
 	default = current
