@@ -22,10 +22,10 @@
 	frag = magenta bold
 	old = red bold
 	new = green bold
-[user]
-	name = Mark Story
-	email = mark@mark-story.com
 [github]
 	user = markstory
+[user]
+	name = mark_story
+	email = mark@mark-story.com
 [push]
 	default = current
