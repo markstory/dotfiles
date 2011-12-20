@@ -14,6 +14,7 @@
 	ca = commit --amend
 	nb = checkout -b
 	cp = cherry-pick
+	review = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git log -p origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
 [color "status"]
 	added = yellow
 	changed = green
@@ -25,7 +26,7 @@
 [github]
 	user = markstory
 [user]
-	name = mark_story
-	email = mark@mark-story.com
+	name = Mark Story
+	email = mark@freshbooks.com
 [push]
 	default = current
