@@ -3,6 +3,8 @@
 # Colours
 GREEN="\[\033[0;32m\]"
 WHITE="\[\033[0;37m\]"
+MAGENTA="\[\033[0;35m\]"
+BLUE="\[\033[0;34m\]"
 RESET="\[\033[0m\]"
 RED="\[\033[0;31;m\]"
 
@@ -16,13 +18,13 @@ export LSCOLORS='Gxfxcxdxdxegedabagacad'
 # Prompt config
 function exitstatus {
 	EXIT="$?"
-	PROMPT="\u:\W$GREEN$(__git_ps1)$RESET \$ "
+	PROMPT="$BLUE\D{%H:%M:%S}$RESET \u:\W$GREEN$(__git_ps1)$RESET"
 
 	if [ $EXIT -eq 0 ]
 	then
-		PS1=":) $PROMPT"
+		PS1="$PROMPT :) \n\[\e[0m\]\$ "
 	else
-		PS1="$RED:($RESET $PROMPT"
+		PS1="$PROMPT $RED:($RESET \n\[\e[0m\]\$ "
 	fi
 }
 PROMPT_COMMAND=exitstatus

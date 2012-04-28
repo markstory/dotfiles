@@ -1,4 +1,4 @@
-PATH=/opt/local/bin:/opt/local/sbin:/usr/local/sbin:usr/local/bin:/usr/local/share/python:$PATH
+PATH=/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
 
 # Ruby in macports
 if [ -d "/usr/local/Cellar/ruby/1.9.2-p136/bin" ]; then
