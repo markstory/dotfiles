@@ -22,9 +22,9 @@ function exitstatus {
 
 	if [ $EXIT -eq 0 ]
 	then
-		PS1="$PROMPT :) \n\[\e[0m\]\$ "
+		PS1=":) $PROMPT\n\[\e[0m\]\$ "
 	else
-		PS1="$PROMPT $RED:($RESET \n\[\e[0m\]\$ "
+		PS1="$RED:($RESET $PROMPT\n\[\e[0m\]\$ "
 	fi
 }
 PROMPT_COMMAND=exitstatus
