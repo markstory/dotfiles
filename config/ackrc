@@ -7,4 +7,4 @@ python=migration
 --type-add
 php=ctp
 --smart-case
-
+-a
