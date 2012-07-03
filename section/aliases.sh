@@ -9,10 +9,6 @@
 alias ls='ls -FG'
 alias ll='ls -laoh'
 
-# mysql
-alias mysql='mysql5'
-alias mysqldump='mysql5dump'
-
 # ps
 alias psg="ps aux | grep $1"
 
