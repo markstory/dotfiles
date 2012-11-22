@@ -23,3 +23,16 @@ do
 	fi
 done
 
+##
+# Install other config files that don't just live in ~/
+##
+
+# Install .ssh/config
+if [ -f "$HOME/.ssh/config" ];
+then
+	cp "$HOME/.ssh/config" "$HOME/.ssh/config.bak"
+	echo "Backed up existing ssh/config file."
+fi
+rm "$HOME/ssh/config"
+ln -s "$HOME/.dotfiles/app_config/ssh" "$HOME/.ssh/config"
+echo " - Linked ~/.ssh/config"
