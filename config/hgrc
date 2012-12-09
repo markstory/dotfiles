@@ -7,9 +7,13 @@ mq =
 hgext.graphlog = 
 color =
 pager =
+bookmarks =
 
 [color]
 mode = auto
 
 [pager]
 pager = LESS='FSRX' less
+
+[bookmarks]
+track.current = True
