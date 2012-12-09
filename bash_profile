@@ -1,14 +1,10 @@
-PATH=/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
+PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
 
 # Ruby in macports
 if [ -d "/usr/local/Cellar/ruby/1.9.2-p136/bin" ]; then
 	PATH="$PATH:/usr/local/Cellar/ruby/1.9.2-p136/bin"
 fi
 
-# PHP compiled from source
-if [ -d "/usr/local/php/active" ]; then
-	PATH="/usr/local/php/active:$PATH"
-fi
 export PATH
 export DOTFILES_DIR="$HOME/.dotfiles"
 
