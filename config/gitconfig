@@ -31,3 +31,7 @@
 	signingkey = 55B3AEA0
 [push]
 	default = current
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
