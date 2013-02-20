@@ -27,10 +27,14 @@
 	user = markstory
 [user]
 	name = Mark Story
-	email = mark@mark-story.com
+	email = mark@freshbooks.com
 	signingkey = 55B3AEA0
 [push]
 	default = current
+[mergetool]
+	prompt = false
+[merge]
+	tool = vimdiff
 [diff]
 	tool = vimdiff
 [difftool]
