@@ -17,6 +17,7 @@ alias tf="tail -f"
 
 # vim 
 alias vim='mvim -v'
+alias vimdiff='mvim -v -d'
 
 # ssh
 alias ssh="$DOTFILES_DIR/bin/colorssh"
