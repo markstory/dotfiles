@@ -44,16 +44,9 @@ case "$host" in
       ' $host)
     ;;
 esac
- 
+
 window_name="${host}_SSH_$$"
- 
-trap cleanup 1 2 3 6
- 
-function cleanup() {
-    set_color "$default_color"
-    echo -ne "\033]0;\007"
-}
- 
+
 function set_color() {
     case "$TERM_PROGRAM" in
     Apple_Terminal)
@@ -68,4 +61,3 @@ function set_color() {
  
 set_color "$host_color"
 LOCAL_TERMCOLOR="$host_color" ssh -o SendEnv=LOCAL_TERMCOLOR $hostspec
-cleanup
