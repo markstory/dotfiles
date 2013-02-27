@@ -1,2 +1,4 @@
 LogLevel ERROR
 
+Host optimus.2ndsiteinc.com
+    ServerAliveInterval 540
