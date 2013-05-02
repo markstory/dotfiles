@@ -1,3 +1,7 @@
+# Enable vi mode
+set -o vi
+
+# Set path
 PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
 
 # Ruby in homebrew
