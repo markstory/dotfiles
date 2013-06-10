@@ -15,7 +15,7 @@ alias psg="ps aux | grep $1"
 # tail
 alias tf="tail -f"
 
-# vim 
+# vim
 alias vim='mvim -v'
 alias vimdiff='mvim -v -d'
 
@@ -24,6 +24,8 @@ alias ssh="$DOTFILES_DIR/bin/colorssh"
 
 # git extras
 alias gap="git add -p"
+
+alias look="qlmanage -p"
 
 # Does a rebase pull + stash so I can be extra lazy.
 # 
