@@ -36,7 +36,7 @@ gpull () {
 	local ref
 	s=$(git stash 2>/dev/null)
 	ref=$(git symbolic-ref HEAD 2>/dev/null)
-	head=`echo "$ref" | cut -d'/' -f3-9`
+	head=$(echo "$ref" | cut -d'/' -f3-9)
 
 	if [ "" == "$head" ]; then
 		echo "Not on a branch, can't pull"
@@ -59,7 +59,9 @@ gpull () {
 #
 gpush () {
 	local head
-	head=$(basename $(git symbolic-ref HEAD 2>/dev/null) 2>/dev/null)
+	local ref
+	ref=$(git symbolic-ref HEAD 2>/dev/null)
+	head=$(echo "$ref" | cut -d'/' -f3-9)
 	if [ "" = "$head" ]; then
 		echo "Not on a branch, can't push"
 		return 1
