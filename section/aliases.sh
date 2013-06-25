@@ -89,9 +89,11 @@ __git_stash_pop () {
 grebase () {
 	local head
 	local s
+	local ref
 	local remote
 	s=$(git stash 2>/dev/null)
-	head=$(basename $(git symbolic-ref HEAD 2>/dev/null) 2>/dev/null)
+	ref=$(git symbolic-ref HEAD 2>/dev/null)
+	head=$(echo "$ref" | cut -d'/' -f3-9)
 	remote=$2
 
 	if [ "" == "$head" ]; then
@@ -117,8 +119,3 @@ grebase () {
 	__git_stash_pop "$s"
 	return 0
 }
-
-
-
-
-
