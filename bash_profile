@@ -20,14 +20,6 @@ fi
 export PATH
 export DOTFILES_DIR="$HOME/.dotfiles"
 
-# Aliases
-. ~/.dotfiles/section/aliases.sh
-
-# Editors
-export EDITOR='mvim -v'
-export SVN_EDITOR='mvim -v'
-export GIT_EDITOR='mvim -v'
-
 # Node
 export NODE_PATH='/usr/local/share/npm/lib/node_modules'
 
@@ -36,8 +28,8 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
-# load appearance settings.
-. ~/.dotfiles/section/appearance.sh
-
-# history
-. ~/.dotfiles/section/history.sh
+# Load each section file.
+for f in ~/.dotfiles/section/*
+do
+	source $f
+done

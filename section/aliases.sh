@@ -2,14 +2,12 @@
 
 # Aliases for various tools
 
-# coloured ssh
-#alias ssh='colorssh'
-
 # ls
 alias ls='ls -FG'
 alias ll='ls -laoh'
 
 # ps
+alias psa="ps aux"
 alias psg="ps aux | grep $1"
 
 # tail
@@ -22,13 +20,14 @@ alias vimdiff='mvim -v -d'
 # ssh
 alias ssh="$DOTFILES_DIR/bin/colorssh"
 
+# OSX quicklook
+alias look="qlmanage -p"
+
 # git extras
 alias gap="git add -p"
 
-alias look="qlmanage -p"
-
 # Does a rebase pull + stash so I can be extra lazy.
-# 
+#
 # usage: gpull origin
 gpull () {
 	local s
