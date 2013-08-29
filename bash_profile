@@ -11,9 +11,9 @@ then
 fi
 
 # PHP through homebrew
-if [ -d "/usr/local/Cellar/php54/5.4.11/bin" ]
+if [ -d "/usr/local/Cellar/php54/5.4.19/bin" ]
 then
-	PATH="$PATH:/usr/local/Cellar/php54/5.4.11/bin"
+	PATH="$PATH:/usr/local/Cellar/php54/5.4.19/bin"
 fi
 
 
