@@ -2,4 +2,5 @@
 --type-add=php=twig
 --type-add=python=migration
 --type-add=php=ctp
+--type-add=css=less
 --smart-case
