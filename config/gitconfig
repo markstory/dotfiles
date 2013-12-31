@@ -4,16 +4,17 @@
 	status = auto
 [alias]
 	br = branch
+	merged = branch --merged
 	co = checkout
+	nb = checkout -b
 	ci = commit
+	ca = commit --amend
 	df = diff
-	st = status -sb -uno
 	dc = diff --cached
+	cp = cherry-pick
+	st = status -sb -uno
 	gl = log --pretty=short --decorate=short --graph
 	lc = log ORIG_HEAD.. --stat --no-merges
-	ca = commit --amend
-	nb = checkout -b
-	cp = cherry-pick
 	review = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git log -p origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
 [color "status"]
 	added = yellow
