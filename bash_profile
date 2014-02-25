@@ -5,15 +5,15 @@ set -o vi
 PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
 
 # Ruby in homebrew
-if [ -d "/usr/local/Cellar/ruby/2.1.0/bin" ]
+if [ -d "/usr/local/opt/ruby/bin" ]
 then
-	PATH="/usr/local/Cellar/ruby/2.1.0/bin:$PATH"
+	PATH="/usr/local/opt/ruby/bin:$PATH"
 fi
 
 # PHP through homebrew
-if [ -d "/usr/local/Cellar/php54/5.4.19/bin" ]
+if [ -d "/usr/local/opt/php54/bin" ]
 then
-	PATH="/usr/local/Cellar/php54/5.4.19/bin:$PATH"
+	PATH="/usr/local/opt/php54/bin:$PATH"
 fi
 
 # node through homebrew
