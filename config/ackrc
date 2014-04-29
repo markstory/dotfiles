@@ -1,6 +1,8 @@
 --type-add=php=tpl
 --type-add=php=twig
---type-add=python=migration
 --type-add=php=ctp
 --type-add=css=less
+--type-add=ruby=pp
+--type-add=python=rst
+--type-add=html=mustache
 --smart-case
