@@ -1,8 +1,10 @@
 # Enable vi mode
 set -o vi
 
+BREW_PREFIX=`brew --prefix`
+
 # Set path
-PATH=/usr/local/sbin:/usr/local/bin:/usr/local/share/python:$PATH
+PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 # Ruby in homebrew
 if [ -d "/usr/local/opt/ruby/bin" ]
@@ -30,8 +32,8 @@ export DOTFILES_DIR="$HOME/.dotfiles"
 export NODE_PATH='/usr/local/share/npm/lib/node_modules'
 
 # Homebrew tab completion.
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+if [ -f $BREW_PREFIX/etc/bash_completion ]; then
+    . $BREW_PREFIX/etc/bash_completion
 fi
 
 # Load each section file.
