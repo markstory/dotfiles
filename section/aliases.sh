@@ -23,6 +23,9 @@ alias ssh="$DOTFILES_DIR/bin/colorssh"
 # OSX quicklook
 alias look="qlmanage -p"
 
+# Bundle exec is annoying.
+alias be="bundle exec"
+
 # git extras
 alias gap="git add -p"
 
