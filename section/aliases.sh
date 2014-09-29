@@ -36,6 +36,7 @@ gpull () {
 	local s
 	local head
 	local ref
+	local remote
 	s=$(git stash 2>/dev/null)
 	ref=$(git symbolic-ref HEAD 2>/dev/null)
 	head=$(echo "$ref" | cut -d'/' -f3-9)
@@ -45,13 +46,12 @@ gpull () {
 		__git_stash_pop "$s"
 		return 1
 	fi
-	if [ "$1" = "" ]; then
-		echo "No remote selected, can't pull"
-		__git_stash_pop "$s"
-		return 2
+	remote="$1"
+	if [ "$remote" = "" ]; then
+		remote="origin"
 	fi
-	git fetch -a $1
-	git pull --rebase $1 "$head"
+	git fetch -a "$remote"
+	git pull --rebase "$remote" "$head"
 	__git_stash_pop "$s"
 	return 0
 }
@@ -62,17 +62,18 @@ gpull () {
 gpush () {
 	local head
 	local ref
+	local remote
 	ref=$(git symbolic-ref HEAD 2>/dev/null)
 	head=$(echo "$ref" | cut -d'/' -f3-9)
+	remote="$1"
 	if [ "" = "$head" ]; then
 		echo "Not on a branch, can't push"
 		return 1
 	fi
-	if [ "$1" = "" ]; then
-		echo "No remote selected can't push"
-		return 2
+	if [ "$remote" = "" ]; then
+		remote="origin"
 	fi
-	git push "$1" "$head"
+	git push "$remote" "$head"
 }
 
 __git_stash_pop () {
