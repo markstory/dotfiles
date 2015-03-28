@@ -19,9 +19,15 @@ then
 fi
 
 # node through homebrew
-if [ -d "/usr/local/share/npm/bin" ]
+if [ -d '/usr/local/lib/node_modules' ]
 then
-	PATH="/usr/local/share/npm/bin:$PATH"
+	PATH="/usr/local/lib/node_modules:$PATH"
+fi
+
+# MacTex
+if [ -d "/usr/texbin" ]
+then
+	PATH="/usr/texbin:$PATH"
 fi
 
 
