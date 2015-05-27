@@ -13,9 +13,9 @@ then
 fi
 
 # PHP through homebrew
-if [ -d "/usr/local/opt/php54/bin" ]
+if [ -d "/usr/local/opt/php55/bin" ]
 then
-	PATH="/usr/local/opt/php54/bin:$PATH"
+	PATH="/usr/local/opt/php55/bin:$PATH"
 fi
 
 # node through homebrew

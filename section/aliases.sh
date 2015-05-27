@@ -26,6 +26,9 @@ alias look="qlmanage -p"
 # Bundle exec is annoying.
 alias be="bundle exec"
 
+# PHPUnit installed with composer
+alias phpunit="vendor/bin/phpunit"
+
 # git extras
 alias gap="git add -p"
 
