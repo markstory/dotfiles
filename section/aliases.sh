@@ -91,6 +91,7 @@ __git_stash_pop () {
 # * git pull origin $1
 # * Checkout the previous branch
 # * Rebase it on $1
+# * Pop stash
 #
 grebase () {
 	local head
