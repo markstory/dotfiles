@@ -29,6 +29,9 @@ alias be="bundle exec"
 # PHPUnit installed with composer
 alias phpunit="vendor/bin/phpunit"
 
+# Clear DNS caches.
+alias dnsclear="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
 # git extras
 alias gap="git add -p"
 
