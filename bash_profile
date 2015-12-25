@@ -30,6 +30,12 @@ then
 	PATH="/usr/texbin:$PATH"
 fi
 
+# Rust CLI tools installed via `cargo install`.
+if [ -d "$HOME/.cargo/bin" ]
+then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 
 export PATH
 export DOTFILES_DIR="$HOME/.dotfiles"
