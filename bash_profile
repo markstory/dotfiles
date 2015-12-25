@@ -24,12 +24,6 @@ then
 	PATH="/usr/local/lib/node_modules:$PATH"
 fi
 
-# MacTex
-if [ -d "/usr/texbin" ]
-then
-	PATH="/usr/texbin:$PATH"
-fi
-
 # Rust CLI tools installed via `cargo install`.
 if [ -d "$HOME/.cargo/bin" ]
 then
