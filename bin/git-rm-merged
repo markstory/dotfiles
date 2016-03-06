@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+for branch in $(git branch --merged | grep -v '*')
+do
+    git branch -d "$branch";
+done

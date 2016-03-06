@@ -30,6 +30,8 @@ then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Custom CLI tools
+PATH="$PATH:$HOME/.dotfiles/bin"
 
 export PATH
 export DOTFILES_DIR="$HOME/.dotfiles"
