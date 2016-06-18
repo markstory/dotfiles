@@ -1,39 +1,34 @@
 #!/bin/bash
 #
- 
 if [ "$2" ]; then
     exec ssh $*
 fi
- 
+
 hostspec=$1
 host=$(echo $hostspec | sed -e 's/^.*@//' -e 's/\..*$//')
- 
+
 # The default opacity value if not specified (0-65535)
 #default_opacity=65535
- 
-# The default color which will be used when not connected to any host.
-default_color="2048, 2048, 2048" 
- 
+
+# The default color which is pale yellow (solarized)
+# rgb(253,246,227) * 257 to get 16bit color values.
+default_color="65021, 63222, 58339"
+
 case "$host" in
 ### Add matching host cases here:
-	prod) host_color="12000, 2000, 12000";;
-    dfwapp02) host_color="3328, 10080, 10080";;
+    prod) host_color="12000, 2000, 12000";;
     optimus)  host_color="5000, 5000, 11808";;
     devimage) host_color="8000, 8000, 12000";;
-    ratchet)  host_color="815, 8175, 11717";;
-    iadapp01) host_color="4000, 9000, 4000";;
 ########################################################################
- 
+
     *)  # Compute default color based on first three letters of hostname
     declare -a cols
-#    cols=($(echo -ne ${host/[a-z]*@//} | tr 'A-Z' 'a-z' | tr -cd 'a-z' | \
-#            od -t d1 | head -n1 | cut -c10-22));
     host_color=$(perl -e '
           $DARKNESS = 4;
           $host = $ARGV[0];
           while ($host =~ /(.)/g) { $seed += ord($1) };
-          srand($seed); 
-          for (1..3) { 
+          srand($seed);
+          for (1..3) {
               $c = int(rand() * 65535);
               if ($c > (65535/$DARKNESS)) {
                   $c = $c / $DARKNESS
@@ -54,10 +49,19 @@ function set_color() {
         osascript -e 'tell application "Terminal" to tell (first window whose name contains "'${window_name}'") to set background color to {'"$1"'}'
         ;;
     iTerm.app)
-        osascript -e 'tell application "iTerm" to set background color of (current session of current terminal) to {'"$1"'}'
+        osascript <<EOF
+        tell application "iTerm2"
+            tell current window
+                tell current session
+                    set background color to {$1}
+                end tell
+            end tell
+        end tell
+EOF
         ;;
     esac
 }
- 
+
 set_color "$host_color"
 LOCAL_TERMCOLOR="$host_color" ssh -o SendEnv=LOCAL_TERMCOLOR $hostspec
+set_color "$default_color"
