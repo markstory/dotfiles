@@ -3,3 +3,10 @@ LogLevel ERROR
 Host *
  ServerAliveInterval 60
  ForwardAgent yes
+
+# rockbox proxy
+Host *.env
+  ProxyCommand ssh -q $(echo %h | sed 's/\.env/.freshenv.com/;s/[^\.]*\./gateway./') nc "%h.fbks.in" 22
+
+Host stickler-ci.com
+  IdentityFile ~/.ssh/digitalocean_rsa
