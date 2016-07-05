@@ -24,6 +24,15 @@ do
 done
 
 ##
+# Link up cli tools that live deep in other packages.
+##
+
+# improved git diff-highlighting
+ln -s /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight $HOME/.dotfiles/bin/diff-highlight
+chmod +x $HOME/.dotfiles/bin/diff-highlight
+
+
+##
 # Install other config files that don't just live in ~/
 ##
 

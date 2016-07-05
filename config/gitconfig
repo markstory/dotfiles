@@ -38,7 +38,14 @@
 	tool = fugitive
 [diff]
 	tool = vimdiff
+	compactionHeuristic = true
 [difftool]
 	prompt = false
 [mergetool "fugitive"]
 	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[pager]
+	log = ~/.dotfiles/bin/diff-highlight | less
+	show = ~/.dotfiles/bin/diff-highlight | less
+	diff = ~/.dotfiles/bin/diff-highlight | less
+[interactive]
+	diffFilter = ~/.dotfiles/bin/diff-highlight
