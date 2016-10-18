@@ -1,4 +1,4 @@
 # Editors
-export EDITOR='mvim -v'
-export SVN_EDITOR='mvim -v'
-export GIT_EDITOR='mvim -v'
+export EDITOR='vim'
+export SVN_EDITOR='vim'
+export GIT_EDITOR='vim'
