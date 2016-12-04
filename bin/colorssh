@@ -14,6 +14,14 @@ host=$(echo $hostspec | sed -e 's/^.*@//' -e 's/\..*$//')
 # rgb(253,246,227) * 257 to get 16bit color values.
 default_color="65021, 63222, 58339"
 
+# Pale grey (solarized) rgb(101,123,131) * 257
+default_foreground="29597,31611,33667"
+
+# Offwhite rgb(200,200,200)
+host_foreground="51400,51400,51400"
+
+
+
 case "$host" in
 ### Add matching host cases here:
     prod) host_color="12000, 2000, 12000";;
@@ -33,7 +41,7 @@ case "$host" in
               if ($c > (65535/$DARKNESS)) {
                   $c = $c / $DARKNESS
               }
-              push @colors, $c; 
+              push @colors, $c;
           };
           print join (", ", @colors);
       ' $host)
@@ -54,6 +62,7 @@ function set_color() {
             tell current window
                 tell current session
                     set background color to {$1}
+                    set foreground color to {$2}
                 end tell
             end tell
         end tell
@@ -62,6 +71,6 @@ EOF
     esac
 }
 
-set_color "$host_color"
+set_color "$host_color" "$host_foreground"
 LOCAL_TERMCOLOR="$host_color" ssh -o SendEnv=LOCAL_TERMCOLOR $hostspec
-set_color "$default_color"
+set_color "$default_color" "$default_foreground"
