@@ -12,12 +12,6 @@ then
 	PATH="/usr/local/opt/ruby/bin:$PATH"
 fi
 
-# PHP through homebrew
-if [ -d "/usr/local/opt/php70/bin" ]
-then
-	PATH="/usr/local/opt/php70/bin:$PATH"
-fi
-
 # node through homebrew
 if [ -d '/usr/local/lib/node_modules' ]
 then
