@@ -50,6 +50,12 @@ esac
 
 window_name="${host}_SSH_$$"
 
+trap cleanup 1 2 3 6
+
+function cleanup() {
+    set_color "$default_color" "$default_foreground"
+}
+
 function set_color() {
     case "$TERM_PROGRAM" in
     Apple_Terminal)
