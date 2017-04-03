@@ -14,8 +14,6 @@
 	cp = cherry-pick
 	st = status -sb -uno
 	gl = log --pretty=short --decorate=short --graph
-	lc = log ORIG_HEAD.. --stat --no-merges
-	review = !GIT_CURRENT_BRANCH=$(git name-rev --name-only HEAD) && git log -p origin/$GIT_CURRENT_BRANCH..$GIT_CURRENT_BRANCH
 [color "status"]
 	added = yellow
 	changed = green
