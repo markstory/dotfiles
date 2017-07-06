@@ -43,3 +43,5 @@ for f in ~/.dotfiles/section/*
 do
 	source $f
 done
+
+export PATH="$HOME/.cargo/bin:$PATH"
