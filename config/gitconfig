@@ -3,6 +3,7 @@
 	diff = auto
 	status = auto
 [alias]
+	fix = "!f() { git commit --fixup $1; PREVIOUS=$(git log --pretty=%P -n 1 $1); GIT_SEQUENCE_EDITOR=touch git rebase -i --autosquash $PREVIOUS; }; f"
 	br = branch
 	merged = branch --merged
 	co = checkout
@@ -26,7 +27,7 @@
 	user = markstory
 [user]
 	name = Mark Story
-	email = mark@mark-story.com
+	email = markstory@freshbooks.com
 	signingkey = 55B3AEA0
 [push]
 	default = current
