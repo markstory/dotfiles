@@ -44,4 +44,5 @@ do
 	source $f
 done
 
+# Rustup
 export PATH="$HOME/.cargo/bin:$PATH"

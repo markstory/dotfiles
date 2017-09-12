@@ -30,3 +30,6 @@ alias phpunit="vendor/bin/phpunit"
 
 # Clear DNS caches.
 alias dnsclear="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
+# docker
+alias docker-env='eval $(docker-machine env)'
