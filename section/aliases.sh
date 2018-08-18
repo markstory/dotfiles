@@ -14,9 +14,11 @@ alias psg="ps aux | grep $1"
 alias tf="tail -f"
 
 # vim
-alias vimdiff='vim -d'
-alias vim='nvim'
-alias vi='nvim'
+if [ -x $(command -v nvim) ]; then
+	alias vim='nvim'
+	alias vi='nvim'
+	alias vimdiff='nvim -d'
+fi
 
 # ssh
 alias ssh="$DOTFILES_DIR/bin/colorssh"

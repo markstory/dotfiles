@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Append history on exit
+# Append history on exit instead of overwriting.
 shopt -s histappend
 
 # Erase duplicates
-export HISTCONTROL='erasedups'
+export HISTCONTROL='ignoredups:erasedups'
 
 # Big history
 export HISTSIZE=5000

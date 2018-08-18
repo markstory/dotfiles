@@ -27,7 +27,7 @@
 	user = markstory
 [user]
 	name = Mark Story
-	email = markstory@freshbooks.com
+	email = mark@mark-story.com
 	signingkey = 55B3AEA0
 [push]
 	default = current

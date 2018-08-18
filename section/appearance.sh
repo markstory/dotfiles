@@ -26,5 +26,8 @@ function exitstatus {
 	else
 		PS1="$RED:($RESET $PROMPT\n\[\e[0m\]\$ "
 	fi
+	history -a
+	history -c
+	history -r
 }
 PROMPT_COMMAND=exitstatus
