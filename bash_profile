@@ -38,6 +38,11 @@ if [ -f $BREW_PREFIX/etc/bash_completion ]; then
     . $BREW_PREFIX/etc/bash_completion
 fi
 
+# Python virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 # Load each section file.
 for f in ~/.dotfiles/section/*
 do
