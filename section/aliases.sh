@@ -37,6 +37,3 @@ alias dnsclear="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # docker
 alias docker-env='eval $(docker-machine env)'
-
-# datamart
-alias computron="psql -h freshbooks-data.c8exzn6geij3.us-east-1.redshift.amazonaws.com -p 5439 -d data_depot -U mark"
