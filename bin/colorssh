@@ -24,9 +24,7 @@ host_foreground="51400,51400,51400"
 
 case "$host" in
 ### Add matching host cases here:
-    prod) host_color="12000, 2000, 12000";;
-    optimus)  host_color="5000, 5000, 11808";;
-    devimage) host_color="8000, 8000, 12000";;
+    # eg. prod) host_color="12000, 2000, 12000";;
 ########################################################################
 
     *)  # Compute default color based on first three letters of hostname
