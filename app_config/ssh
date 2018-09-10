@@ -1,7 +1,6 @@
 LogLevel ERROR
 
 IdentityFile ~/.ssh/id_rsa
-IdentityFile ~/.ssh/aws-private.pem
 
 Host *
  ServerAliveInterval 60
@@ -11,16 +10,5 @@ Host *
 Host stickler-ci.com
   IdentityFile ~/.ssh/digitalocean_rsa
 
-# RC hosts
-Host *.env
- ProxyCommand ssh -q $(echo %h | sed 's/\.env/.freshenv.com/;s/[^\.]*\./gateway./') nc  "%h.fbks.in" 22
-
-Host *.compute-1.amazonaws.com
- IdentityFile ~/.ssh/aws-private.pem
-
-Host pi.builds.2ndsiteinc.com
- IdentityFile ~/.ssh/aws-private.pem
-
-Host core.builds.2ndsiteinc.com
- User core
- IdentityFile ~/.ssh/aws-private.pem
+Host stickler-worker*
+  IdentityFile ~/.ssh/digitalocean_rsa
