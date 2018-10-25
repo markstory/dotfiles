@@ -45,3 +45,7 @@ fi
 rm "$HOME/ssh/config"
 ln -s "$HOME/.dotfiles/app_config/ssh" "$HOME/.ssh/config"
 echo " - Linked ~/.ssh/config"
+
+
+echo '- Installing applications'
+brew install nvim fzf the_silver_searcher
