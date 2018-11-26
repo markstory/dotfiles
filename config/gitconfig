@@ -41,7 +41,7 @@
 [difftool]
 	prompt = false
 [mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+	cmd = nvim -c \"Gdiff\" \"$MERGED\"
 [pager]
 	log = ~/.dotfiles/bin/diff-highlight | less
 	show = ~/.dotfiles/bin/diff-highlight | less
