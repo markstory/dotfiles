@@ -15,17 +15,29 @@ export GREP_COLOR='1;33'
 # ls colours
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
-# Prompt config
-function exitstatus {
-	EXIT="$?"
-	PROMPT="$BLUE\D{%H:%M:%S}$RESET \u:\W$GREEN$(__git_ps1)$RESET"
-
-	if [ $EXIT -eq 0 ]
-	then
-		PS1=":) $PROMPT\n\[\e[0m\]\$ "
-	else
-		PS1="$RED:($RESET $PROMPT\n\[\e[0m\]\$ "
-	fi
-	history -a
+# Determine active Python virtualenv details.
+function set_virtualenv () {
+  if test -z "$VIRTUAL_ENV"
+  then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV=" ${BLUE}🐍`basename \"$VIRTUAL_ENV\"`"
+  fi
 }
-PROMPT_COMMAND=exitstatus
+
+# Prompt config
+function set_bash_prompt {
+    EXIT="$?"
+    set_virtualenv
+
+    PROMPT="${BLUE}\D{%H:%M:%S}${RESET} \u:\W${PYTHON_VIRTUALENV}${GREEN}$(__git_ps1)${RESET}"
+
+    if [ $EXIT -eq 0 ]
+    then
+        PS1="${PROMPT}\n\[\e[0m\]\$ "
+    else
+        PS1="🔴 ${PROMPT}\n\[\e[0m\]\$ "
+    fi
+    history -a
+}
+PROMPT_COMMAND=set_bash_prompt
