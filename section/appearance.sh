@@ -17,26 +17,30 @@ export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
 # Determine active Python virtualenv details.
 function set_virtualenv () {
-  if test -z "$VIRTUAL_ENV"
-  then
-      PYTHON_VIRTUALENV=""
-  else
-      PYTHON_VIRTUALENV=" ${BLUE}🐍`basename \"$VIRTUAL_ENV\"`"
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+      echo -n " ${BLUE}py:$(basename $VIRTUAL_ENV)${RESET}"
   fi
+}
+
+
+VCPROMPT_CMD=/usr/local/bin/vcprompt
+function vcprompt () {
+    if [[ -e "$VCPROMPT_CMD" ]]; then
+        $VCPROMPT_CMD -f " on ${GREEN}%b%m%u${RESET}"
+    fi
 }
 
 # Prompt config
 function set_bash_prompt {
     EXIT="$?"
-    set_virtualenv
 
-    PROMPT="${BLUE}\D{%H:%M:%S}${RESET} \u:\W${PYTHON_VIRTUALENV}${GREEN}$(__git_ps1)${RESET}"
+    PROMPT="${BLUE}\D{%H:%M:%S}${RESET} \u:\W$(set_virtualenv)$(vcprompt)"
 
     if [ $EXIT -eq 0 ]
     then
-        PS1="${PROMPT}\n\[\e[0m\]\$ "
+        PS1="ᐉ ${PROMPT}\n\[\e[0m\]\$ "
     else
-        PS1="🔴 ${PROMPT}\n\[\e[0m\]\$ "
+        PS1="${RED}ᐉ${RESET} ${PROMPT}\n\[\e[0m\]\$ "
     fi
     history -a
 }

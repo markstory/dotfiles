@@ -48,4 +48,4 @@ echo " - Linked ~/.ssh/config"
 
 
 echo '- Installing applications'
-brew install nvim fzf the_silver_searcher
+brew install nvim fzf the_silver_searcher vcprompt
