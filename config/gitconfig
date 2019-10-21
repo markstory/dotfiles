@@ -48,3 +48,5 @@
 	diff = ~/.dotfiles/bin/diff-highlight | less
 [interactive]
 	diffFilter = ~/.dotfiles/bin/diff-highlight
+[core]
+	excludesfile = ~/.dotfiles/app_config/gitignore_global
