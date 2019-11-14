@@ -28,7 +28,7 @@ done
 ##
 
 # improved git diff-highlighting
-ln -s /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/diff-highlight $HOME/.dotfiles/bin/diff-highlight
+ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight $HOME/.dotfiles/bin/diff-highlight
 chmod +x $HOME/.dotfiles/bin/diff-highlight
 
 
