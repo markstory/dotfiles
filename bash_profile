@@ -6,23 +6,27 @@ BREW_PREFIX=`brew --prefix`
 # Set path
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
-# Ruby in homebrew
-if [ -d "/usr/local/opt/ruby/bin" ]
-then
-	PATH="/usr/local/opt/ruby/bin:$PATH"
-fi
-
 # node through homebrew
-if [ -d '/usr/local/lib/node_modules' ]
-then
-	PATH="/usr/local/lib/node_modules:$PATH"
-fi
+PATH="$PATH:/usr/local/lib/node_modules"
+
+# Yarn and global packages
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Poetry for python
+PATH="$PATH:/$HOME/.poetry/bin"
+
+# Ruby in homebrew
+PATH="$PATH:/usr/local/opt/ruby/bin"
 
 # Rust CLI tools installed via `cargo install`.
-if [ -d "$HOME/.cargo/bin" ]
-then
-	PATH="$HOME/.cargo/bin:$PATH"
-fi
+PATH="$PATH:$HOME/.cargo/bin"
+
+# Volta for nodejs environments
+export VOLTA_HOME="$HOME/.volta"
+[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
+
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 
 # Custom CLI tools
 PATH="$PATH:$HOME/.dotfiles/bin"
@@ -46,15 +50,5 @@ fi
 # Load each section file.
 for f in ~/.dotfiles/section/*
 do
-	source $f
+    source $f
 done
-
-# Rustup
-export PATH="$HOME/.cargo/bin:$PATH"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export VOLTA_HOME="$HOME/.volta"
-[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
-
-export PATH="$VOLTA_HOME/bin:$PATH"
