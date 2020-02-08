@@ -10,7 +10,7 @@ Host *
 Host stickler-ci.com
   IdentityFile ~/.ssh/digitalocean_rsa
 
-Host stickler-worker*
+Host stickler-*
   IdentityFile ~/.ssh/digitalocean_rsa
 
 Host cakephp.org
