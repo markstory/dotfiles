@@ -12,3 +12,8 @@ Host stickler-ci.com
 
 Host stickler-worker*
   IdentityFile ~/.ssh/digitalocean_rsa
+
+Host cakephp.org
+  Hostname 104.239.163.8
+  User root
+  IdentityFile ~/.ssh/cakephp_rsa
