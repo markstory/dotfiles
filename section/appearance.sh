@@ -44,4 +44,4 @@ function set_bash_prompt {
     fi
     history -a
 }
-PROMPT_COMMAND=set_bash_prompt
+PROMPT_COMMAND="set_bash_prompt;$PROMPT_COMMAND"
