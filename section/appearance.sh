@@ -8,6 +8,8 @@ BLUE="\[\033[0;34m\]"
 RESET="\[\033[0m\]"
 RED="\[\033[0;31;m\]"
 
+export COLORTERM="truecolor"
+
 # Grep
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'

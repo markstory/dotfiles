@@ -3,6 +3,9 @@
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore *.pyc --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# Set fzf preview window theme (provided by bat) to match terminal and vim.
+export BAT_THEME="Solarized (light)"
+
 # Add autocompletion for fzf
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
 
