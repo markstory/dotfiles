@@ -18,6 +18,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Direnv if installed
 [ -s "/usr/local/bin/direnv" ] && eval "$(direnv hook bash)"
 
+# Ruby in homebrew
+PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # Rust CLI tools installed via `cargo install`.
 PATH="$PATH:$HOME/.cargo/bin"
 
