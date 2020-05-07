@@ -12,10 +12,15 @@ host=$(echo $hostspec | sed -e 's/^.*@//' -e 's/\..*$//')
 
 # The default color which is pale yellow (solarized)
 # rgb(253,246,227) * 257 to get 16bit color values.
-default_color="65021, 63222, 58339"
-
+# default_color="65021, 63222, 58339"
 # Pale grey (solarized) rgb(101,123,131) * 257
-default_foreground="29597,31611,33667"
+# default_foreground="29597,31611,33667"
+
+# lucius colors
+# rgb(254,255,255) * 257 to get 16bit color values.
+default_color="65278, 65535, 65535"
+# Black
+default_foreground="0, 0, 0"
 
 # Offwhite rgb(200,200,200)
 host_foreground="51400,51400,51400"
