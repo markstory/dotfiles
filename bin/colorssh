@@ -20,7 +20,7 @@ host=$(echo $hostspec | sed -e 's/^.*@//' -e 's/\..*$//')
 # rgb(254,255,255) * 257 to get 16bit color values.
 default_color="65278, 65535, 65535"
 # Black
-default_foreground="0, 0, 0"
+default_foreground="13107, 13107, 13107"
 
 # Offwhite rgb(200,200,200)
 host_foreground="51400,51400,51400"
