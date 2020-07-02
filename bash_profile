@@ -1,7 +1,12 @@
 # Enable vi mode
 set -o vi
 
-BREW_PREFIX=`brew --prefix`
+OS_NAME=$(uname -a | cut -f1 -d' ')
+
+BREW_PREFIX=''
+if [[ "$OS_NAME" = "Darwin" ]]; then
+    BREW_PREFIX=`brew --prefix`
+fi
 
 # Set path for homebrew binaries
 PATH=/usr/local/sbin:/usr/local/bin:$PATH

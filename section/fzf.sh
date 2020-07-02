@@ -6,9 +6,20 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Set fzf preview window theme (provided by bat) to match terminal and vim.
 export BAT_THEME="OneHalfLight"
 
-# Add autocompletion for fzf
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
+if [[ "$OS_NAME" = "Darwin" ]]; then
+    # Add autocompletion for fzf
+    [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
 
-# Key bindings
-# ------------
-source "/usr/local/opt/fzf/shell/key-bindings.bash"
+    # Key bindings
+    # ------------
+    source "/usr/local/opt/fzf/shell/key-bindings.bash"
+fi
+
+if [[ "$OS_NAME" = "Linux" ]]; then
+    # Add autocompletion for fzf
+    [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
+
+    # Key bindings
+    # ------------
+    source "$HOME/.fzf/shell/key-bindings.bash"
+fi

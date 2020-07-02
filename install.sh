@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+OS_NAME=$(uname -a | cut -f1 -d' ')
 
 ! [ -f $HOME/.bash_profile.bak ] && \
 	cp $HOME/.bash_profile $HOME/.bash_profile.bak && \
@@ -48,4 +49,9 @@ echo " - Linked ~/.ssh/config"
 
 
 echo '- Installing applications'
-brew install nvim fzf the_silver_searcher vcprompt
+if [[ "$OS_NAME" = "Darwin" ]]; then
+    brew install nvim fzf the_silver_searcher vcprompt
+fi
+if [[ "$OS_NAME" = "Linux" ]]; then
+    sudo apt install ack silversearcher-ag
+fi

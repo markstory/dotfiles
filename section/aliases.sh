@@ -20,11 +20,16 @@ if [ -x $(command -v nvim) ]; then
 	alias vimdiff='nvim -d'
 fi
 
-# ssh
-alias ssh="$DOTFILES_DIR/bin/colorssh"
+if [[ "$OS_NAME" =  "Darwin" ]]; then
+    # ssh with host colors
+    alias ssh="$DOTFILES_DIR/bin/colorssh"
 
-# OSX quicklook
-alias look="qlmanage -p"
+    # OSX quicklook
+    alias look="qlmanage -p"
+
+    # Clear DNS caches.
+    alias dnsclear="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+fi
 
 # Bundle exec is annoying.
 alias be="bundle exec"
@@ -32,8 +37,3 @@ alias be="bundle exec"
 # PHPUnit installed with composer
 alias phpunit="vendor/bin/phpunit"
 
-# Clear DNS caches.
-alias dnsclear="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-
-# docker
-alias docker-env='eval $(docker-machine env)'
