@@ -1,3 +1,5 @@
+# vim: foldmethod=marker
+#
 # Enable vi mode
 set -o vi
 
@@ -8,14 +10,31 @@ if [[ "$OS_NAME" = "Darwin" ]]; then
     BREW_PREFIX=`brew --prefix`
 fi
 
+# {{{ Setup PATH
 # Set path for homebrew binaries
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 # node through homebrew
-PATH="$PATH:/usr/local/lib/node_modules"
+if [[ -d "/usr/local/lib/node_modules" ]]; then
+    PATH="$PATH:/usr/local/lib/node_modules"
+fi
+
+# Ruby in homebrew
+if [[ -d "/usr/local/opt/ruby/bin" ]]; then
+    PATH="/usr/local/opt/ruby/bin:$PATH"
+fi
+
+# Binaries in home directory
+if [[ -d "$HOME/.local/bin" ]]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 # Yarn and global packages
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Volta for node versions
+export VOLTA_HOME="$HOME/.volta"
+PATH="$VOLTA_HOME/bin:$PATH"
 
 # Pyenv if available.
 [ -s "/usr/local/bin/pyenv" ] && eval "$(pyenv init -)"
@@ -23,25 +42,16 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Direnv if installed
 [ -s "/usr/local/bin/direnv" ] && eval "$(direnv hook bash)"
 
-# Ruby in homebrew
-PATH="/usr/local/opt/ruby/bin:$PATH"
-
 # Rust CLI tools installed via `cargo install`.
 PATH="$PATH:$HOME/.cargo/bin"
-
-# Volta for nodejs environments
-export VOLTA_HOME="$HOME/.volta"
-[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Custom CLI tools
 PATH="$PATH:$HOME/.dotfiles/bin"
 
 export PATH
-export DOTFILES_DIR="$HOME/.dotfiles"
+# }}}
 
-# Node
-export NODE_PATH='/usr/local/share/npm/lib/node_modules'
+export DOTFILES_DIR="$HOME/.dotfiles"
 
 # Load each section file.
 for f in ~/.dotfiles/section/*
@@ -53,3 +63,4 @@ done
 if [ -f $BREW_PREFIX/etc/bash_completion ]; then
     . $BREW_PREFIX/etc/bash_completion
 fi
+
