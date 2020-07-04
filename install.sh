@@ -36,16 +36,20 @@ chmod +x $HOME/.dotfiles/bin/diff-highlight
 ##
 # Install other config files that don't just live in ~/
 ##
-
-# Install .ssh/config
 if [ -f "$HOME/.ssh/config" ];
 then
     cp "$HOME/.ssh/config" "$HOME/.ssh/config.bak"
     echo "Backed up existing ssh/config file."
 fi
 rm "$HOME/ssh/config"
-ln -s "$HOME/.dotfiles/app_config/ssh" "$HOME/.ssh/config"
+ln -s "$DOTFILES_DIR/app_config/ssh" "$HOME/.ssh/config"
 echo " - Linked ~/.ssh/config"
+
+if [[ ! -d "$HOME/.config/kitty" ]]; then
+    mkdir -p "$HOME/.config/kitty"
+fi
+ln -s "$DOTFILES_DIR/app_config/kitty.config" "$HOME/.config/kitty/kitty.conf"
+echo " - Linked ~/.config/kitty/kitty.conf"
 
 
 echo '- Installing applications'
