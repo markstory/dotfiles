@@ -1,6 +1,7 @@
 #!/usr/bin/env bash -e
 
 # Aliases for various tools
+alias grep='grep --color=auto'
 
 # ls
 alias ls='ls -FG'
@@ -15,9 +16,9 @@ alias tf="tail -f"
 
 # vim
 if [ -x $(command -v nvim) ]; then
-	alias vim='nvim'
-	alias vi='nvim'
-	alias vimdiff='nvim -d'
+    alias vim='nvim'
+    alias vi='nvim'
+    alias vimdiff='nvim -d'
 fi
 
 if [[ "$OS_NAME" =  "Darwin" ]]; then

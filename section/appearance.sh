@@ -11,7 +11,6 @@ RED="\[\033[0;31;m\]"
 export COLORTERM="truecolor"
 
 # Grep
-export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 
 # ls colours
