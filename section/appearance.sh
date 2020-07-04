@@ -24,7 +24,7 @@ function set_virtualenv () {
 }
 
 
-VCPROMPT_CMD=/usr/local/bin/vcprompt
+VCPROMPT_CMD=$DOTFILES_DIR/bin/vcprompt
 function vcprompt () {
     if [[ -e "$VCPROMPT_CMD" ]]; then
         $VCPROMPT_CMD -f " on ${GREEN}%b%m%u${RESET}"
