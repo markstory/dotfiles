@@ -37,10 +37,13 @@ export VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
 
 # Pyenv if available.
-[ -s "/usr/local/bin/pyenv" ] && eval "$(pyenv init -)"
+[ -x "/usr/local/bin/pyenv" ] && eval "$(pyenv init -)"
+[ -s "$HOME/.local/bin/pyenv" ] && eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv/"
 
 # Direnv if installed
 [ -s "/usr/local/bin/direnv" ] && eval "$(direnv hook bash)"
+[ -s "/usr/bin/direnv" ] && eval "$(direnv hook bash)"
 
 # Rust CLI tools installed via `cargo install`.
 PATH="$PATH:$HOME/.cargo/bin"
