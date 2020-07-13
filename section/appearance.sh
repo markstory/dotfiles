@@ -21,6 +21,9 @@ function set_virtualenv () {
   if [[ -n "$VIRTUAL_ENV" ]]; then
       echo -n " ${BLUE}py:$(basename $VIRTUAL_ENV)${RESET}"
   fi
+  if [[ -n "$PYENV_VERSION" ]]; then
+      echo -n " ${BLUE}py:$(basename $PYENV_VERSION)${RESET}"
+  fi
 }
 
 
