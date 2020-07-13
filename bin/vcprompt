@@ -22,8 +22,6 @@ Formatting options:
 VCS-specific formatting:
   These options can be used for VCS-specific prompt formatting.
 
-  --format-bzr FORMAT        Bazaar
-  --format-cvs FORMAT        CVS
   --format-darcs FORMAT      Darcs
   --format-fossil FORMAT     Fossil
   --format-git FORMAT        Git
@@ -238,98 +236,6 @@ def main():
     timer.cancel()
     return output
 
-
-@vcs([".bzr/branch/last-revision"])
-def bzr(options):
-    """
-    Bazaar
-
-    The Bazaar version control system
-    """
-    branch = revision = modified = untracked = options.unknown
-
-    # local revision or global sha
-    if re.search('%(r|h)', options.format):
-        try:
-            revision = open(options.file, 'r').readline().split()[0]
-        except IOError:
-            pass
-
-    # status (modified/untracked)
-    if re.search('%[mu]', options.format):
-        output, returncode = popen('bzr status --short')
-
-        modified = ''
-        untracked = ''
-
-        if returncode == 0:
-            if output:
-                for line in output.splitlines():
-                    line = line.strip()
-                    if line.startswith('M'):
-                        modified = options.modified
-                    elif line.startswith('?'):
-                        untracked = options.untracked
-
-    # formatting
-    return {
-        'branch': os.path.basename(options.path),
-        'revision': revision,
-        'modified': modified,
-        'untracked': untracked,
-    }
-
-
-@vcs(["CVS"])
-def cvs(options):
-    """
-    CVS
-
-    Concurrent Versions System.
-    """
-    return {}
-
-
-@vcs(["_darcs/hashed_inventory"])
-def darcs(options):
-    """
-    Darcs
-
-    Distributed. Interactive. Smart.
-    """
-    branch = sha = modified = untracked = options.unknown
-
-    # sha
-    if re.search('%(h|r)', options.format):
-        output, returncode = popen('darcs changes --last 1 --xml')
-
-        if returncode == 0:
-            dom = parseString(output)
-            patch = dom.getElementsByTagName("patch")[0].getAttribute("hash")
-            sha = patch.rsplit('-', 1)[-1].split('.')[0][:7]
-
-    # modified
-    if re.search('%[mu]', options.format):
-        output, returncode = popen('darcs whatsnew -l -s')
-
-        if returncode == 1:
-            modified = ''
-            untracked = ''
-        elif returncode == 0:
-            for line in output:
-                line = line.strip()
-                if line.startswith('M'):
-                    modified = options.modified
-                elif line.startswith('a'):
-                    untracked = options.untracked
-
-    # formatting
-    return {
-        'branch': os.path.basename(options.path),
-        'hash': sha,
-        'modified': modified,
-        'untracked': untracked,
-    }
 
 
 @vcs([".fslckout", "_FOSSIL_"])
