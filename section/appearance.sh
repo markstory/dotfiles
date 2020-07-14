@@ -6,7 +6,7 @@ WHITE="\[\033[0;37m\]"
 MAGENTA="\[\033[0;35m\]"
 BLUE="\[\033[0;34m\]"
 RESET="\[\033[0m\]"
-RED="\[\033[0;31;m\]"
+RED="\[\033[0;31m\]"
 
 export COLORTERM="truecolor"
 
@@ -33,11 +33,11 @@ function vcprompt () {
 
 # Prompt config
 function set_bash_prompt {
-    EXIT="$?"
+    local EXIT_CODE="$?"
 
     PROMPT="${BLUE}\D{%H:%M:%S}${RESET} \u:\W$(set_virtualenv)$(vcprompt)"
 
-    if [ $EXIT -eq 0 ]
+    if [[ $EXIT_CODE == 0 ]]
     then
         PS1="ᐉ ${PROMPT}\n\[\e[0m\]\$ "
     else
