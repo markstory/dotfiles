@@ -45,8 +45,6 @@ rm "$HOME/ssh/config"
 ln -s "$DOTFILES_DIR/app_config/ssh" "$HOME/.ssh/config"
 echo " - Linked ~/.ssh/config"
 
-
-
 echo '- Installing applications'
 if [[ "$OS_NAME" = "Darwin" ]]; then
     brew install nvim fzf the_silver_searcher
