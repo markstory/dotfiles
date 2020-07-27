@@ -45,16 +45,11 @@ rm "$HOME/ssh/config"
 ln -s "$DOTFILES_DIR/app_config/ssh" "$HOME/.ssh/config"
 echo " - Linked ~/.ssh/config"
 
-if [[ ! -d "$HOME/.config/kitty" ]]; then
-    mkdir -p "$HOME/.config/kitty"
-fi
-ln -s "$DOTFILES_DIR/app_config/kitty.config" "$HOME/.config/kitty/kitty.conf"
-echo " - Linked ~/.config/kitty/kitty.conf"
 
 
 echo '- Installing applications'
 if [[ "$OS_NAME" = "Darwin" ]]; then
-    brew install nvim fzf the_silver_searcher vcprompt
+    brew install nvim fzf the_silver_searcher
 fi
 if [[ "$OS_NAME" = "Linux" ]]; then
     sudo apt install ack silversearcher-ag
