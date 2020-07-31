@@ -67,3 +67,4 @@ if [ -f $BREW_PREFIX/etc/bash_completion ]; then
     . $BREW_PREFIX/etc/bash_completion
 fi
 
+export PATH="$HOME/.cargo/bin:$PATH"

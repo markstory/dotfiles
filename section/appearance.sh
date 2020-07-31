@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 # Colours
-GREEN="\[\033[0;32m\]"
-WHITE="\[\033[0;37m\]"
-MAGENTA="\[\033[0;35m\]"
-BLUE="\[\033[0;34m\]"
-RESET="\[\033[0m\]"
-RED="\[\033[0;31m\]"
+BOLD="\e[1m"
+GREEN="\[\e[0;32m"
+WHITE="\[\e[0;37m"
+MAGENTA="\[\e[0;35m"
+BLUE="\[\e[0;34m"
+RESET="\[\e[0m"
+RED="\[\e[0;31m"
 
 export COLORTERM="truecolor"
 
@@ -27,7 +28,7 @@ function set_virtualenv () {
 VCPROMPT_CMD=$DOTFILES_DIR/bin/vcprompt
 function vcprompt () {
     if [[ -e "$VCPROMPT_CMD" ]]; then
-        $VCPROMPT_CMD -f " on ${GREEN}%b%m%u${RESET}"
+        $VCPROMPT_CMD -f " on ${GREEN}%b[%m%a%u]${RESET}"
     fi
 }
 
@@ -35,13 +36,12 @@ function vcprompt () {
 function set_bash_prompt {
     local EXIT_CODE="$?"
 
-    PROMPT="${BLUE}\D{%H:%M:%S}${RESET} \u:\W$(set_virtualenv)$(vcprompt)"
-
+    PROMPT="${BLUE}\D{%H:%M:%S}${RESET} \u ${MAGENTA}\w${RESET}$(set_virtualenv)$(vcprompt)"
     if [[ $EXIT_CODE == 0 ]]
     then
-        PS1="ᐉ ${PROMPT}\n\[\e[0m\]\$ "
+        PS1="${PROMPT}\n${GREEN}ᐉ${RESET}\] "
     else
-        PS1="${RED}ᐉ${RESET} ${PROMPT}\n\[\e[0m\]\$ "
+        PS1="${PROMPT}\n${RED}ᐉ${RESET}\] "
     fi
     history -a
 }
