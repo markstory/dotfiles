@@ -15,6 +15,7 @@ export COLORTERM="truecolor"
 export GREP_COLOR='1;33'
 
 # ls colours
+export CLICOLOR=1
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
 # Determine active Python virtualenv details.
