@@ -46,6 +46,7 @@
 	log = ~/.dotfiles/bin/diff-highlight | less
 	show = ~/.dotfiles/bin/diff-highlight | less
 	diff = ~/.dotfiles/bin/diff-highlight | less
+	branch = false
 [interactive]
 	diffFilter = ~/.dotfiles/bin/diff-highlight
 [core]
