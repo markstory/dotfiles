@@ -1,0 +1,24 @@
+! Configure typeface
+xterm*faceName: Fira Code Retina
+xterm*faceSize: 11
+
+! Colors to match lucius theme
+xterm*background:  #ffffff
+xterm*foreground:  #444444
+xterm*cursorColor: #5f87af
+xterm*color0:      #444444
+xterm*color8:      #444444
+xterm*color1:      #af0000
+xterm*color9:      #af0000
+xterm*color2:      #008700
+xterm*color10:     #008700
+xterm*color3:      #af5f00
+xterm*color11:     #af5f00
+xterm*color4:      #005faf
+xterm*color12:     #005faf
+xterm*color5:      #870087
+xterm*color13:     #870087
+xterm*color6:      #008787
+xterm*color14:     #008787
+xterm*color7:      #ffffff
+xterm*color15:     #ffffff
