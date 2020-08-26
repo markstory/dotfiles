@@ -59,3 +59,17 @@ fi
 if [[ "$OS_NAME" = "Linux" ]]; then
     sudo apt install ack silversearcher-ag
 fi
+
+# TODO also install
+# - php
+# - python3
+# - pyenv
+# - rustup
+# - cargo install bat
+# - fzf
+# - neovim
+# - zbarimg
+# - sqlite3
+# - virtualbox
+# - vagrant
+# - mysql
