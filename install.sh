@@ -45,19 +45,23 @@ rm "$HOME/ssh/config"
 ln -s "$DOTFILES_DIR/app_config/ssh" "$HOME/.ssh/config"
 echo " - Linked ~/.ssh/config"
 
+# Tmux
+ln -s "$DOTFILES_DIR/app_config/tmux.conf" "$HOME/.tmux.conf"
+echo " - Linked ~/.tmux.conf"
+
+# Kitty
 if [[ ! -d "$HOME/.config/kitty" ]]; then
     mkdir -p "$HOME/.config/kitty"
 fi
 ln -s "$DOTFILES_DIR/app_config/kitty.config" "$HOME/.config/kitty/kitty.conf"
 echo " - Linked ~/.config/kitty/kitty.conf"
 
-
 echo '- Installing applications'
 if [[ "$OS_NAME" = "Darwin" ]]; then
     brew install nvim fzf the_silver_searcher
 fi
 if [[ "$OS_NAME" = "Linux" ]]; then
-    sudo apt install ack silversearcher-ag
+    sudo apt install ack silversearcher-ag pyenv zbarimg sqlite3
 fi
 
 # TODO also install
@@ -68,8 +72,6 @@ fi
 # - cargo install bat
 # - fzf
 # - neovim
-# - zbarimg
-# - sqlite3
 # - virtualbox
 # - vagrant
 # - mysql
