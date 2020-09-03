@@ -16,4 +16,9 @@ Host stickler-*
 Host cakephp.org
   Hostname 104.239.163.8
   User root
-  IdentityFile ~/.ssh/cakephp_rsa
+  IdentityFile ~/.ssh/cakephp_org
+
+Host apps.cakephp.org
+  Hostname 45.33.98.106
+  User root
+  IdentityFile ~/.ssh/cakephp_org
