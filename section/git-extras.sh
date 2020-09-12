@@ -1,5 +1,3 @@
-#!/usr/bin/env bash -e
-
 # git extras
 alias gap="git add -p"
 
@@ -7,20 +5,16 @@ alias gap="git add -p"
 #
 # usage: gpull origin
 gpull () {
-	local s
-	local head
-	local ref
-	local remote
-	s=$(git stash 2>/dev/null)
-	ref=$(git symbolic-ref HEAD 2>/dev/null)
-	head=$(echo "$ref" | cut -d'/' -f3-9)
+	local s=$(git stash 2>/dev/null)
+	local ref=$(git symbolic-ref HEAD 2>/dev/null)
+	local head=$(echo "$ref" | cut -d'/' -f3-9)
 
-	if [ "" == "$head" ]; then
+	if [ "" = "$head" ]; then
 		echo "Not on a branch, can't pull"
 		__git_stash_pop "$s"
 		return 1
 	fi
-	remote="$1"
+	local remote="$1"
 	if [ "$remote" = "" ]; then
 		remote="origin"
 	fi
@@ -74,17 +68,17 @@ grebase () {
 	head=$(echo "$ref" | cut -d'/' -f3-9)
 	remote=$2
 
-	if [ "" == "$head" ]; then
+	if [ "" = "$head" ]; then
 		echo "Not on a branch, can't pull"
 		__git_stash_pop "$s"
 		return 1
 	fi
-	if [ "$1" == "" ]; then
+	if [ "$1" = "" ]; then
 		echo "No branch selected, can't pull and rebase"
 		__git_stash_pop "$s"
 		return 2
 	fi
-	if [ "$remote" == "" ]; then
+	if [ "$remote" = "" ]; then
 		remote="origin"
 	fi
 	# Switch to the original branch and get changes

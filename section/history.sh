@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Append history on exit instead of overwriting.
 shopt -s histappend
 

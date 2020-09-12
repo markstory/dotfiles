@@ -1,5 +1,3 @@
-#!/usr/bin/env bash -e
-
 # Aliases for various tools
 alias grep='grep --color=auto'
 
