@@ -94,8 +94,11 @@ export DOTFILES_DIR="$HOME/.dotfiles"
 # {{{ FZF config (temporarily here)
 # Use the_silver_searcher for fzf
 # this makes fzf faster, and exclude git guts and pyc.
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore *.pyc --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore "*.pyc" --ignore ".git" -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='
+  --color=bg:#ffffff,bg+:#dadada,fg:#444444,fg+:#444444,hl:#af5f00,hl+:#af5f00,info:#008787,border:#dadada,prompt:#005faf,pointer:#005faf,header:#808080
+'
 
 # Set fzf preview window theme (provided by bat) to match terminal and vim.
 export BAT_THEME="OneHalfLight"
