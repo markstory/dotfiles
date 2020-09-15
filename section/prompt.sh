@@ -23,7 +23,7 @@ autoload -Uz vcs_info
 # Configure version control status
 zstyle ':vcs_info:*' enable git
 local formats="on %F{green}%b%f%m%c%u"
-local actionformats="${formats} %a"
+local actionformats="${formats} %F{red}(%a)%f"
 zstyle ':vcs_info:*' formats $formats
 zstyle ':vcs_info:*' actionformats $actionformats
 zstyle ':vcs_info:*' stagedstr "%F{blue}+%f"
