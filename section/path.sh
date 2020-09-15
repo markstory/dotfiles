@@ -1,16 +1,3 @@
-# vim: foldmethod=marker
-#
-# Enable vi mode
-set -o vi
-
-OS_NAME=$(uname -a | cut -f1 -d' ')
-
-BREW_PREFIX=''
-if [[ "$OS_NAME" = "Darwin" ]]; then
-    BREW_PREFIX=`brew --prefix`
-fi
-
-# {{{ Setup PATH
 # Set path for homebrew binaries
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
@@ -42,8 +29,8 @@ PATH="$VOLTA_HOME/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv/"
 
 # Direnv if installed
-[ -s "/usr/local/bin/direnv" ] && eval "$(direnv hook bash)"
-[ -s "/usr/bin/direnv" ] && eval "$(direnv hook bash)"
+[ -s "/usr/local/bin/direnv" ] && eval "$(direnv hook zsh)"
+[ -s "/usr/bin/direnv" ] && eval "$(direnv hook zsh)"
 
 # Rust CLI tools installed via `cargo install`.
 PATH="$PATH:$HOME/.cargo/bin"
@@ -52,19 +39,3 @@ PATH="$PATH:$HOME/.cargo/bin"
 PATH="$PATH:$HOME/.dotfiles/bin"
 
 export PATH
-# }}}
-
-export DOTFILES_DIR="$HOME/.dotfiles"
-
-# Load each section file.
-for f in ~/.dotfiles/section/*
-do
-    source $f
-done
-
-# Homebrew tab completion.
-if [ -f $BREW_PREFIX/etc/bash_completion ]; then
-    . $BREW_PREFIX/etc/bash_completion
-fi
-
-export PATH="$HOME/.cargo/bin:$PATH"

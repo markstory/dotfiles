@@ -1,14 +1,4 @@
-#!/usr/bin/env bash
-
-# Colours
-BOLD="\e[1m"
-GREEN="\[\e[0;32m"
-WHITE="\[\e[0;37m"
-MAGENTA="\[\e[0;35m"
-BLUE="\[\e[0;34m"
-RESET="\[\e[0m"
-RED="\[\e[0;31m"
-
+# Colour configuration
 export COLORTERM="truecolor"
 
 # Grep
@@ -18,32 +8,30 @@ export GREP_COLOR='1;33'
 export CLICOLOR=1
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
+# Prompt configuration
+
 # Determine active Python virtualenv details.
 function set_virtualenv () {
   if [[ -n "$VIRTUAL_ENV" ]]; then
-      echo -n " ${BLUE}py:$(basename $VIRTUAL_ENV)${RESET}"
+      echo -n " %F{blue}py:$(basename $VIRTUAL_ENV)%f"
   fi
 }
 
+# Load VCS module
+autoload -Uz vcs_info
 
-VCPROMPT_CMD=$DOTFILES_DIR/bin/vcprompt
-function vcprompt () {
-    if [[ -e "$VCPROMPT_CMD" ]]; then
-        $VCPROMPT_CMD -f " on ${GREEN}%b[%m%a%u]${RESET}"
-    fi
-}
+# Configure version control status
+zstyle ':vcs_info:*' enable git
+local formats="on %F{green}%b%f%m%c%u"
+local actionformats="${formats} %a"
+zstyle ':vcs_info:*' formats $formats
+zstyle ':vcs_info:*' actionformats $actionformats
+zstyle ':vcs_info:*' stagedstr "%F{blue}+%f"
+zstyle ':vcs_info:*' unstagedstr  "%F{red}*%f"
+zstyle ':vcs_info:*' check-for-changes true
+
+precmd () { vcs_info }
 
 # Prompt config
-function set_bash_prompt {
-    local EXIT_CODE="$?"
-
-    PROMPT="${BLUE}\D{%H:%M:%S}${RESET} \u ${MAGENTA}\w${RESET}$(set_virtualenv)$(vcprompt)"
-    if [[ $EXIT_CODE == 0 ]]
-    then
-        PS1="${PROMPT}\n${GREEN}ᐉ${RESET}\] "
-    else
-        PS1="${PROMPT}\n${RED}ᐉ${RESET}\] "
-    fi
-    history -a
-}
-PROMPT_COMMAND="set_bash_prompt;$PROMPT_COMMAND"
+PROMPT='%F{blue}%*%f %n %F{magenta}%~%f$(set_virtualenv) ${vcs_info_msg_0_}%f
+%(?.%F{green}.%F{red})ᐉ%f '

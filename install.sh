@@ -7,6 +7,8 @@ OS_NAME=$(uname -a | cut -f1 -d' ')
 
 rm $HOME/.bash_profile
 ln -s $HOME/.dotfiles/bash_profile $HOME/.bash_profile
+rm $HOME/.zshrc
+ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 
 for file in $HOME/.dotfiles/config/*
 do

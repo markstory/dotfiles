@@ -1,12 +1,26 @@
-# Append history on exit instead of overwriting.
-shopt -s histappend
+# History
+SAVEHIST=5000
+HISTSIZE=2000
+HISTFILE=${HOME}/.zsh_history
 
-# Erase duplicates
-export HISTCONTROL='ignoredups:erasedups'
+# Share history across sessions.
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
 
-# Big history
-export HISTSIZE=5000
+# Add commands incrementally
+setopt INC_APPEND_HISTORY
 
-function rh {
-	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
-}
+# expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST 
+
+# do not store duplications
+setopt HIST_IGNORE_DUPS
+
+#ignore duplicates when searching
+setopt HIST_FIND_NO_DUPS
+
+# removes blank lines from history
+setopt HIST_REDUCE_BLANKS
+
+# Enable prompt substitutions
+setopt prompt_subst
