@@ -5,8 +5,6 @@ OS_NAME=$(uname -a | cut -f1 -d' ')
     cp $HOME/.bash_profile $HOME/.bash_profile.bak && \
     echo 'Backed up bash_profile to bash_profile.bak'
 
-rm $HOME/.bash_profile
-ln -s $HOME/.dotfiles/bash_profile $HOME/.bash_profile
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 
@@ -25,6 +23,10 @@ do
         echo " - Linked $basefile"
     fi
 done
+
+# Clone powerlevel10k theme
+mkdir -p $HOME/.config
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/powerlevel10k
 
 ##
 # Link up cli tools that live deep in other packages.
