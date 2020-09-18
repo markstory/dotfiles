@@ -4,7 +4,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore "*.pyc" --ignore ".git" -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='
   --color=bg:#ffffff,bg+:#dadada,fg:#444444,fg+:#444444
-  --color=hl:#af5f00,hl+:#af5f00,info:#008787
+  --color=hl:#008787,hl+:#008700,info:#008787
   --color=border:#dadada,prompt:#005faf,pointer:#005faf,header:#808080
 '
 
