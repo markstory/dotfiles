@@ -2,8 +2,13 @@
 alias grep='grep --color=auto'
 
 # ls
-alias ls='ls --color=auto -FG'
-alias ll='ls --color=auto -laoh'
+if [[ "$OS_NAME" = "Darwin" ]]; then
+    alias ls='ls -FG'
+    alias ll='ls -FGlaoh'
+else
+    alias ls='ls --color=auto -F'
+    alias ll='ls --color=auto -laoh'
+fi
 
 # ps
 alias psa="ps aux"
