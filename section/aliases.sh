@@ -2,8 +2,8 @@
 alias grep='grep --color=auto'
 
 # ls
-alias ls='ls -FG'
-alias ll='ls -laoh'
+alias ls='ls --color=auto -FG'
+alias ll='ls --color=auto -laoh'
 
 # ps
 alias psa="ps aux"
