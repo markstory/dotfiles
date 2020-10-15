@@ -1,53 +1,53 @@
 [color]
-	branch  = auto
-	diff = auto
-	status = auto
+    branch  = auto
+    diff = auto
+    status = auto
 [alias]
-	fix = "!f() { git commit --fixup $1; PREVIOUS=$(git log --pretty=%P -n 1 $1); GIT_SEQUENCE_EDITOR=touch git rebase -i --autosquash $PREVIOUS; }; f"
-	br = branch
-	merged = branch --merged
-	co = checkout
-	nb = checkout -b
-	ci = commit
-	ca = commit --amend
-	df = diff
-	dc = diff --cached
-	cp = cherry-pick
-	st = status -sb -uno
-	gl = log --pretty=short --decorate=short --graph
+    fix = "!f() { git commit --fixup $1; PREVIOUS=$(git log --pretty=%P -n 1 $1); GIT_SEQUENCE_EDITOR=touch git rebase -i --autosquash $PREVIOUS; }; f"
+    br = branch
+    merged = branch --merged
+    co = checkout
+    nb = checkout -b
+    ci = commit
+    ca = commit --amend
+    df = diff
+    dc = diff --cached
+    cp = cherry-pick
+    st = status -sb -uno
+    gl = log --pretty=short --decorate=short --graph
 [color "status"]
-	added = yellow
-	changed = green
+    added = yellow
+    changed = green
 [color "diff"]
-	meta = cyan bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = cyan bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [github]
-	user = markstory
+    user = markstory
 [user]
-	name = Mark Story
-	email = mark@mark-story.com
-	signingkey = 55B3AEA0
+    name = Mark Story
+    email = mark@mark-story.com
+    signingkey = 55B3AEA0
 [push]
-	default = current
+    default = current
 [mergetool]
-	prompt = false
+    prompt = false
 [merge]
-	tool = fugitive
+    tool = fugitive
 [diff]
-	tool = vimdiff
-	compactionHeuristic = true
+    tool = vimdiff
+    compactionHeuristic = true
 [difftool]
-	prompt = false
+    prompt = false
 [mergetool "fugitive"]
-	cmd = nvim -c \"Gvdiff\" \"$MERGED\"
+    cmd = nvim -f -c "Gvdiffsplit!" "$MERGED"
 [pager]
-	log = ~/.dotfiles/bin/diff-highlight | less
-	show = ~/.dotfiles/bin/diff-highlight | less
-	diff = ~/.dotfiles/bin/diff-highlight | less
-	branch = false
+    log = ~/.dotfiles/bin/diff-highlight | less
+    show = ~/.dotfiles/bin/diff-highlight | less
+    diff = ~/.dotfiles/bin/diff-highlight | less
+    branch = false
 [interactive]
-	diffFilter = ~/.dotfiles/bin/diff-highlight
+    diffFilter = ~/.dotfiles/bin/diff-highlight
 [core]
-	excludesfile = ~/.dotfiles/app_config/gitignore_global
+    excludesfile = ~/.dotfiles/app_config/gitignore_global
