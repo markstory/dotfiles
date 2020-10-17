@@ -33,5 +33,8 @@ done
 # Enable powerlevel10k prompt
 source $HOME/.config/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit $DOTFILES_DIR/.p10k.zsh.
+# Include my configuration for powerlevel10k
 source $DOTFILES_DIR/p10k.zsh
+
+# Include autosuggestsion
+source $HOME/.config/zsh-autosuggestions/zsh-autosuggestions.zsh

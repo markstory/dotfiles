@@ -24,9 +24,14 @@ do
     fi
 done
 
-# Clone powerlevel10k theme
+# Create ~/.config as a few things will end up there.
 mkdir -p $HOME/.config
+
+# Clone powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/powerlevel10k
+
+# Clone zsh autosuggestions
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh-autosuggestions
 
 ##
 # Link up cli tools that live deep in other packages.
