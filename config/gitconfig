@@ -51,3 +51,8 @@
     diffFilter = ~/.dotfiles/bin/diff-highlight
 [core]
     excludesfile = ~/.dotfiles/app_config/gitignore_global
+
+# URL alias to support sentry specific SSH keys.
+[url "git@getsentry.github.com:getsentry"]
+    insteadOf = git@github.com:getsentry
+    insteadOf = https://github.com/getsentry

@@ -1,11 +1,9 @@
 LogLevel ERROR
 
-IdentityFile ~/.ssh/id_rsa
-
-Host *
- ServerAliveInterval 60
- ForwardAgent yes
- IdentityFile ~/.ssh/id_rsa
+# sentry SSO requires its own ssh.
+Host getsentry.github.com
+  Hostname github.com
+  IdentityFile ~/.ssh/id_sentry
 
 Host stickler-ci.com
   IdentityFile ~/.ssh/digitalocean_rsa
@@ -17,3 +15,8 @@ Host apps.cakephp.org
   Hostname 45.33.98.106
   User root
   IdentityFile ~/.ssh/cakephp_org
+
+Host * !getsentry.github.com
+ ServerAliveInterval 60
+ ForwardAgent yes
+ IdentityFile ~/.ssh/id_rsa
