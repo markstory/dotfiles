@@ -8,6 +8,8 @@ if [[ "$OS_NAME" = "Darwin" ]]; then
 else
     alias ls='ls --color=auto -F'
     alias ll='ls --color=auto -laoh'
+    alias copy='xclip -sel copy'
+    alias paste='xclip -out -sel clip'
 fi
 
 # ps
