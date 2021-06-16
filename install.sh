@@ -65,6 +65,13 @@ fi
 ln -s "$DOTFILES_DIR/app_config/kitty.config" "$HOME/.config/kitty/kitty.conf"
 echo " - Linked ~/.config/kitty/kitty.conf"
 
+# Alacritty
+if [[ ! -d "$HOME/.config/alacritty" ]]; then
+    mkdir -p "$HOME/.config/alacritty"
+fi
+ln -s "$DOTFILES_DIR/app_config/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+echo " - Linked ~/.config/alacritty/alacritty.yml"
+
 echo '- Installing applications'
 if [[ "$OS_NAME" = "Darwin" ]]; then
     brew install nvim fzf the_silver_searcher

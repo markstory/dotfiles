@@ -1,0 +1,50 @@
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Medium
+  size: 11.0
+
+cursor:
+  style: block
+
+selection:
+  save_to_clipboard: true
+
+colors:
+  primary:
+    background: '#fafafa'
+    foreground: '#383a42'
+  cursor:
+    text: '#383a42'
+    cursor: '#fafafa'
+  selection:
+    background: '#383a42'
+    text: '#fafafa'
+  normal:
+    black: '#fafafa'
+    red: '#ca1243'
+    green: '#50a14f'
+    yellow: '#c18401'
+    blue: '#4078f2'
+    magenta: '#a626a4'
+    cyan: '#0184bc'
+    white: '#383a42'
+  bright:
+    black: '#a0a1a7'
+    red: '#ca1243'
+    green: '#50a14f'
+    yellow: '#c18401'
+    blue: '#4078f2'
+    magenta: '#a626a4'
+    cyan: '#0184bc'
+    white: '#090a0b'
+  indexed_colors:
+    - { index: 16, color: '#d75f00' }
+    - { index: 17, color: '#986801' }
+    - { index: 18, color: '#f0f0f1' }
+    - { index: 19, color: '#e5e5e6' }
+    - { index: 20, color: '#696c77' }
+    - { index: 21, color: '#202227' }
