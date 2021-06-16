@@ -1,11 +1,16 @@
+window:
+  padding:
+    x: 2
+    y: 0
+
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Regular
+    style: Light
   bold:
     family: FiraCode Nerd Font
     style: Medium
-  size: 11.0
+  size: 13.5
 
 cursor:
   style: block
