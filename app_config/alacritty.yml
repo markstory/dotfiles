@@ -6,11 +6,11 @@ window:
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Light
+    style: Regular
   bold:
     family: FiraCode Nerd Font
     style: Medium
-  size: 13.5
+  size: 11.0
 
 cursor:
   style: block
@@ -20,7 +20,7 @@ selection:
 
 colors:
   primary:
-    background: '#fafafa'
+    background: '#ffffff'
     foreground: '#383a42'
   cursor:
     text: '#383a42'
