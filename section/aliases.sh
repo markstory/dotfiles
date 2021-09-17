@@ -27,9 +27,6 @@ if [ -x $(command -v nvim) ]; then
 fi
 
 if [[ "$OS_NAME" =  "Darwin" ]]; then
-    # ssh with host colors
-    alias ssh="$DOTFILES_DIR/bin/colorssh"
-
     # OSX quicklook
     alias look="qlmanage -p"
 
