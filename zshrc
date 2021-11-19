@@ -16,10 +16,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 OS_NAME=$(uname -a | cut -f1 -d' ')
+OS_ARCH=$(uname -m)
 
 BREW_PREFIX=''
-if [[ "$OS_NAME" = "Darwin" ]]; then
-    BREW_PREFIX=`brew --prefix`
+if [[ "$OS_NAME" = "Darwin" && "$OS_ARCH" = "arm64" ]]; then
+    BREW_PREFIX=`/opt/homebrew/bin/brew --prefix`
+fi
+if [[ "$OS_NAME" = "Darwin" && "$OS_ARCH" = "x86_64" ]]; then
+    BREW_PREFIX=`/usr/local/bin/brew --prefix`
 fi
 
 export DOTFILES_DIR="$HOME/.dotfiles"
