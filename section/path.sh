@@ -26,9 +26,11 @@ export VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
 
 # Pyenv if available.
-[ -x "$BREW_PREFIX/bin/pyenv" ] && eval "$(pyenv init -)"
-[ -s "$HOME/.local/bin/pyenv" ] && eval "$(pyenv init -)"
-export PYENV_ROOT="$HOME/.pyenv/"
+if [ -x "$BREW_PREFIX/bin/pyenv" ] || [ -s "$HOME/.local/bin/pyenv" ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    eval "$(pyenv init -)"
+    PATH="$PYENV_ROOT/shims:$PATH"
+fi
 
 # Direnv if installed
 [ -s "$BREW_PREFIX/bin/direnv" ] && eval "$(direnv hook zsh)"
