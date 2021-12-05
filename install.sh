@@ -58,6 +58,10 @@ echo " - Linked ~/.ssh/config"
 ln -s "$DOTFILES_DIR/app_config/tmux.conf" "$HOME/.tmux.conf"
 echo " - Linked ~/.tmux.conf"
 
+# Dig
+ln -s "$DOTFILES_DIR/app_config/digrc" "$HOME/.digrc"
+echo " - Linked ~/.digrc"
+
 # Kitty
 if [[ ! -d "$HOME/.config/kitty" ]]; then
     mkdir -p "$HOME/.config/kitty"
