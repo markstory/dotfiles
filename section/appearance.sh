@@ -8,4 +8,6 @@ export GREP_COLOR='1;33'
 export CLICOLOR=1
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
-export TERM=screen-256color
+if [ -z "$TERM" ]; then
+    export TERM=screen-256color
+fi
