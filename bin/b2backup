@@ -1,0 +1,47 @@
+#!/bin/bash
+source $HOME/.dotfiles/config/backup-env.sh
+
+export PASSPHRASE="${BACKUP_GPG_PASSPHRASE}"
+export SIGN_PASSPHRASE="${BACKUP_GPG_PASSPHRASE}" 
+
+# Remove files older than 90 days
+echo "> Cleaning up old backups"
+duplicity \
+    --sign-key $BACKUP_GPG_KEY --encrypt-key $BACKUP_GPG_KEY \
+    remove-older-than 90D --force \
+    b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}
+
+# Perform the backup, make a full backup if it's been over 30 days
+echo "> Starting backup"
+duplicity \
+    --sign-key=$BACKUP_GPG_KEY \
+    --encrypt-key=$BACKUP_GPG_KEY \
+    --full-if-older-than=30D \
+    ${BACKUP_EXCLUDES} "${BACKUP_PATH}" "b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}"
+
+# Cleanup failures
+echo "> Cleanup failures"
+duplicity \
+    cleanup --force \
+    --sign-key $GPG_KEY --encrypt-key $GPG_KEY \
+    b2://${B2_ACCOUNT}:${B2_KEY}@${B2_BUCKET}
+
+# Show collection-status
+echo "> Getting backup status"
+duplicity collection-status \
+   --sign-key $GPG_KEY --encrypt-key $GPG_KEY \
+   b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}
+
+# Unset variables
+unset BACKUP_B2_ACCOUNT
+unset BACKUP_B2_KEY
+unset BACKUP_B2_BUCKET
+unset BACKUP_B2_DIR
+
+unset BACKUP_GPG_KEY
+unset BACKUP_PASSPHRASE
+
+unset BACKUP_DIR
+unset BACKUP_EXCLUDES
+unset PASSPHRASE
+unset SIGN_PASSPHRASE
