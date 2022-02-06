@@ -23,13 +23,13 @@ duplicity \
 echo "> Cleanup failures"
 duplicity \
     cleanup --force \
-    --sign-key $GPG_KEY --encrypt-key $GPG_KEY \
-    b2://${B2_ACCOUNT}:${B2_KEY}@${B2_BUCKET}
+    --sign-key=$BACKUP_GPG_KEY --encrypt-key=$BACKUP_GPG_KEY \
+    b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}
 
 # Show collection-status
 echo "> Getting backup status"
 duplicity collection-status \
-   --sign-key $GPG_KEY --encrypt-key $GPG_KEY \
+   --sign-key=$BACKUP_GPG_KEY --encrypt-key=$BACKUP_GPG_KEY \
    b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}
 
 # Unset variables
