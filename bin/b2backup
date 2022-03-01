@@ -17,6 +17,7 @@ duplicity \
     --sign-key=$BACKUP_GPG_KEY \
     --encrypt-key=$BACKUP_GPG_KEY \
     --full-if-older-than=30D \
+    --progress \
     ${BACKUP_EXCLUDES} "${BACKUP_PATH}" "b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}"
 
 # Cleanup failures
