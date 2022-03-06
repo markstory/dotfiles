@@ -4,46 +4,54 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore "*.pyc" --ignore ".git" -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 _gen_fzf_default_opts() {
-    # base16 light color theme.
-    # local color00='#fafafa'
-    # local color01='#f0f0f1'
-    # local color02='#e5e5e6'
-    # local color03='#a0a1a7'
-    # local color04='#696c77'
-    # local color05='#383a42'
-    # local color06='#202227'
-    # local color07='#090a0b'
-    # local color08='#ca1243'
-    # local color09='#d75f00'
-    # local color0A='#c18401'
-    # local color0B='#50a14f'
-    # local color0C='#0184bc'
-    # local color0D='#4078f2'
-    # local color0E='#a626a4'
-    # local color0F='#986801'
-
     # tokyonight day theme.
-    local color00='#e9e9ed'
-    local color01='#d4d6e4'
-    local color02='#587539'
-    local color03='#8c6c3e'
-    local color04='#2e7de9'
-    local color05='#9854f1'
-    local color06='#007197'
-    local color07='#6172b0'
-    local color08='#a1a6c5'
-    local color09='#f52a65'
-    local color0A='#587539'
-    local color0B='#8c6c3e'
-    local color0C='#2e7de9'
-    local color0D='#9854f1'
-    local color0E='#007197'
-    local color0F='#3760bf'
+    #local color00='#e9e9ed'
+    #local color01='#d4d6e4'
+    #local color02='#587539'
+    #local color03='#8c6c3e'
+    #local color04='#2e7de9'
+    #local color05='#9854f1'
+    #local color06='#007197'
+    #local color07='#6172b0'
+    #local color08='#a1a6c5'
+    #local color09='#f52a65'
+    #local color0A='#587539'
+    #local color0B='#8c6c3e'
+    #local color0C='#2e7de9'
+    #local color0D='#9854f1'
+    #local color0E='#007197'
+    #local color0F='#3760bf'
+    # local colorbg=$color01
+    # local colorbgp=$color00
+    # local spinner=$color0C
+    # local hl=$color0D
+    # local fg=$color04
+    # local header=$color0D
+    # local info=$color0A
+    # local pointer=$color0C
+    # local marker=$color0C
+    # local fgp=$color06
+    # local prompt=$color0A
+    # local hlp=$color0D
+
+    # Edge light
+    local bg='#fafafa'
+    local bgp='#fafafa'
+    local spinner='#d05858'
+    local prompt='#d05858'
+    local hl='#5079be'
+    local hlp='#3a8b84'
+    local fg='#4b505b'
+    local fgp='#4b505b'
+    local header='#3a8b84'
+    local info='#88909f'
+    local pointer='#b05ccc'
+    local marker='#608e32'
 
     export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-" --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D"\
-" --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C"\
-" --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
+" --color=bg+:$bgp,bg:$bg,spinner:$spinner,hl:$hl"\
+" --color=fg:$fg,header:$header,info:$info,pointer:$pointer"\
+" --color=marker:$marker,fg+:$fgp,prompt:$prompt,hl+:$hlp"
 }
 
 _gen_fzf_default_opts
