@@ -17,7 +17,8 @@ Host apps.cakephp.org
   IdentityFile ~/.ssh/cakephp_org
 
 Host * !getsentry.github.com
- ServerAliveInterval 60
+ ServerAliveInterval 500
  ServerAliveCountMax 10
  ForwardAgent yes
  IdentityFile ~/.ssh/id_rsa
+ SetEnv TERM=screen
