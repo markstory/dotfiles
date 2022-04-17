@@ -40,3 +40,4 @@ alias be="bundle exec"
 # PHPUnit installed with composer
 alias phpunit="vendor/bin/phpunit"
 
+alias ssh="TERM=xterm ssh"
