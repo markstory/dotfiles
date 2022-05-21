@@ -32,6 +32,11 @@ if [ -x "$BREW_PREFIX/bin/pyenv" ] || [ -s "$HOME/.local/bin/pyenv" ]; then
     PATH="$PYENV_ROOT/shims:$PATH"
 fi
 
+# Use /snap/bin if it exists.
+if [[ -d "/snap/bin" ]]; then
+    PATH="$PATH:/snap/bin"
+fi
+
 # Direnv if installed
 [ -s "$BREW_PREFIX/bin/direnv" ] && eval "$(direnv hook zsh)"
 [ -s "/usr/bin/direnv" ] && eval "$(direnv hook zsh)"
