@@ -84,14 +84,4 @@ if [[ "$OS_NAME" = "Linux" ]]; then
     sudo apt install ack silversearcher-ag pyenv zbarimg sqlite3
 fi
 
-# TODO also install
-# - php
-# - python3
-# - pyenv
-# - rustup
-# - cargo install bat
-# - fzf
-# - neovim
-# - virtualbox
-# - vagrant
-# - mysql
+source "./install_packages.sh"
