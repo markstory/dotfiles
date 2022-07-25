@@ -20,7 +20,7 @@ PACKAGES+=( "snap" "nodejs" "docker" "docker-compose" "mysql-server" )
 PACKAGES+=( "rhythmbox" "steam" )
 
 # Install all the packages
-sudo apt install $PACKAGES
+sudo apt install -y $PACKAGES
 
 # Install snaps and flatpaks
 snap install flutter --classic
