@@ -8,7 +8,7 @@ PACKAGES=()
 
 # Basic tools
 # Remember: NeoVim and Kitty are stored in the home directory
-PACKAGES+=( "git" "fzf" "tmux" "build-essentails" "htop" )
+PACKAGES+=( "git" "fzf" "tmux" "build-essentails" "htop" "xclip")
 
 # PHP and dependencies for my PHP work.
 PACKAGES+=( "php8.1" "php8.1-intl" "php8.1-dom" "php8.1-sqlite3" "php8.1-xml" "php-8.1mbstring" "php8.1-memcache" "php8.1-mysql" "php8.1-pgsql")
