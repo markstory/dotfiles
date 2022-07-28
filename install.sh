@@ -81,7 +81,6 @@ if [[ "$OS_NAME" = "Darwin" ]]; then
     brew install nvim fzf the_silver_searcher
 fi
 if [[ "$OS_NAME" = "Linux" ]]; then
-    sudo apt install ack silversearcher-ag pyenv zbarimg sqlite3
+    source "./install_packages.sh"
 fi
 
-source "./install_packages.sh"
