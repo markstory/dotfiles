@@ -41,3 +41,13 @@ alias be="bundle exec"
 alias phpunit="vendor/bin/phpunit"
 
 alias ssh="TERM=xterm ssh"
+
+# Trying out podman instead of docker at home.
+if [[ -x $(command -v podman) ]]; then
+    alias docker='podman'
+fi
+
+# cross-platform clipboard
+if [[ "$OS_NAME" = "Linux" ]]; then
+    alias pbcopy="xclip -se c -i"
+fi
