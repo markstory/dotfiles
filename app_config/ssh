@@ -16,6 +16,11 @@ Host apps.cakephp.org
   User root
   IdentityFile ~/.ssh/cakephp_org
 
+Host apps.cakephp.org
+  Hostname 45.33.98.106
+  User dokku
+  IdentityFile ~/.ssh/cakephp_org
+
 Host * !getsentry.github.com
  ServerAliveInterval 500
  ServerAliveCountMax 10
