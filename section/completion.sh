@@ -1,3 +1,4 @@
+# See appearance.sh for styling
 # Completion confiugration
 autoload -Uz compinit && compinit
 

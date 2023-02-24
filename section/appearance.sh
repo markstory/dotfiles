@@ -8,6 +8,9 @@ export GREP_COLOR='1;33'
 export CLICOLOR=1
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
+# ZSH Completion
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
+
 if [[ "$TERM" = "" && "$OS_NAME" = "Linux" ]]; then
     #export TERM=screen-256color
 fi
