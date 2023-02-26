@@ -57,3 +57,8 @@
 [url "git@getsentry.github.com:getsentry"]
     insteadOf = git@github.com:getsentry
     insteadOf = https://github.com/getsentry
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
