@@ -57,7 +57,7 @@ _gen_fzf_default_opts() {
 _gen_fzf_default_opts
 
 # Set fzf preview window theme (provided by bat) to match terminal and vim.
-export BAT_THEME="ansi-light"
+export BAT_THEME="ansi"
 
 if [[ "$OS_NAME" = "Darwin" ]]; then
     # Add autocompletion for fzf
