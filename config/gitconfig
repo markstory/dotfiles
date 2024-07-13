@@ -15,6 +15,7 @@
     cp = cherry-pick
     st = status -sb -uno
     gl = log --pretty=short --decorate=short --graph
+    s = switch
 [color "status"]
     added = yellow
     changed = green
