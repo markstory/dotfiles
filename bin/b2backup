@@ -1,37 +1,39 @@
-#!/bin/bash
+#!/bin/bash -e
 source $HOME/.dotfiles/config/backup-env.sh
 
 export PASSPHRASE="${BACKUP_GPG_PASSPHRASE}"
 export SIGN_PASSPHRASE="${BACKUP_GPG_PASSPHRASE}" 
+export BACKUP_B2_URL="b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}"
 
 # Remove files older than 90 days
 echo "> Cleaning up old backups"
-duplicity \
+duplicity --force \
     --sign-key $BACKUP_GPG_KEY --encrypt-key $BACKUP_GPG_KEY \
-    remove-older-than 90D --force \
-    b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}
+    remove-older-than 90D \
+    $BACKUP_B2_URL
 
 # Perform the backup, make a full backup if it's been over 30 days
 echo "> Starting backup"
-duplicity \
-    --sign-key=$BACKUP_GPG_KEY \
-    --encrypt-key=$BACKUP_GPG_KEY \
+duplicity incremental \
+    --sign-key=$BACKUP_GPG_KEY --encrypt-key=$BACKUP_GPG_KEY \
     --full-if-older-than=30D \
+    --exclude-filelist $HOME/.dotfiles/config/backup-excludes \
     --progress \
-    ${BACKUP_EXCLUDES} "${BACKUP_PATH}" "b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}"
+   "${BACKUP_PATH}" $BACKUP_B2_URL
 
 # Cleanup failures
 echo "> Cleanup failures"
-duplicity \
-    cleanup --force \
+duplicity cleanup --force \
     --sign-key=$BACKUP_GPG_KEY --encrypt-key=$BACKUP_GPG_KEY \
-    b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}
+    --exclude-filelist $HOME/.dotfiles/config/backup-excludes \
+    $BACKUP_B2_URL
 
 # Show collection-status
 echo "> Getting backup status"
 duplicity collection-status \
    --sign-key=$BACKUP_GPG_KEY --encrypt-key=$BACKUP_GPG_KEY \
-   b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}
+   --exclude-filelist $HOME/.dotfiles/config/backup-excludes \
+   $BACKUP_B2_URL
 
 # Unset variables
 unset BACKUP_B2_ACCOUNT

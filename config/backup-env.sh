@@ -10,4 +10,4 @@ export BACKUP_B2_BUCKET="mark-popos-backup"
 
 # Local directory to backup
 export BACKUP_PATH="/home/mark"
-export BACKUP_EXCLUDES=(--exclude=/home/mark/.steam/ --exclude=/home/mark/Trash/ --exclude=/home/mark/Downloads/ --exclude=/home/mark/VirtualBox\ VMs/ --exclude=/home/mark/.local/ --exclude=/home/mark/.cargo --exclude=/home/mark/.npm/ --exclude=/home/mark/.docker/ --exclude=/home/mark/.vagrant.d/ --exclude=/home/mark/.cache/ --exclude=/home/mark/code/transloadit/ --exclude=/home/mark/.local/share/containers/)
+#export BACKUP_EXCLUDES=(--exclude=/home/mark/.steam/ --exclude=/home/mark/Trash/ --exclude=/home/mark/Downloads/ --exclude=/home/mark/VirtualBox\ VMs/ --exclude=/home/mark/.local/ --exclude=/home/mark/.cargo --exclude=/home/mark/.npm/ --exclude=/home/mark/.docker/ --exclude=/home/mark/.vagrant.d/ --exclude=/home/mark/.cache/ --exclude=/home/mark/code/transloadit/ --exclude=/home/mark/.local/share/containers/)
