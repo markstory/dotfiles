@@ -1,8 +1,10 @@
 #!/bin/bash -e
 source $HOME/.dotfiles/config/backup-env.sh
 
+# Used by gpg?
 export PASSPHRASE="${BACKUP_GPG_PASSPHRASE}"
 export SIGN_PASSPHRASE="${BACKUP_GPG_PASSPHRASE}" 
+
 export BACKUP_B2_URL="b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}"
 
 # Remove files older than 90 days

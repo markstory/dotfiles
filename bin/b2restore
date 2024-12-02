@@ -1,0 +1,27 @@
+#!/bin/bash -e
+source $HOME/.dotfiles/config/backup-env.sh
+
+# Used by gpg?
+export PASSPHRASE="${BACKUP_GPG_PASSPHRASE}"
+export SIGN_PASSPHRASE="${BACKUP_GPG_PASSPHRASE}" 
+
+export BACKUP_B2_URL="b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}"
+
+restore_path="$1"
+target=$2
+target_path="${target:=~/duplicity-restore/}"
+
+duplicity -t 3D \
+    --sign-key $BACKUP_GPG_KEY --encrypt-key $BACKUP_GPG_KEY \
+    --file-to-restore "$restore_path" \
+    "$BACKUP_B2_URL" "$target_path"
+
+# Unset variables
+unset BACKUP_B2_ACCOUNT
+unset BACKUP_B2_KEY
+unset BACKUP_B2_BUCKET
+unset BACKUP_B2_DIR
+
+unset BACKUP_GPG_KEY
+unset BACKUP_GPG_PASSPHRASE
+unset BACKUP_PATH
