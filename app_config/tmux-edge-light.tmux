@@ -24,7 +24,7 @@ set -g status-right-style NONE
 
 set -g status-left "#[fg=#e9e9ed,nobold,nounderscore,noitalics]#[bg=#eef1f4]#{?client_prefix,#[fg=#b05ccc],#[fg=#bcc5cf]}█ "
 
-set -g status-right "#[fg=#2e7de9,bg=#eef1f4] #{prefix_highlight} #[fg=#dde2e7,bg=#eef1f4,nobold,nounderscore,noitalics]#[fg=#8790a0,bg=#dde2e7] %Y-%m-%d %I:%M %p #[fg=#608e32,nobold] #h "
+set -g status-right "#[fg=#2e7de9,bg=#eef1f4] #{prefix_highlight} #[fg=#dde2e7,bg=#eef1f4,nobold,nounderscore,noitalics]#[fg=#8790a0,bg=#dde2e7] %Y-%m-%d %I:%M %p "
 
 # Make inactive panes darker so the active one is easier to find
 set -g window-style "bg=#fbfbfb"
