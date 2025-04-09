@@ -7,9 +7,13 @@ export SIGN_PASSPHRASE="${BACKUP_GPG_PASSPHRASE}"
 
 export BACKUP_B2_URL="b2://${BACKUP_B2_ACCOUNT}:${BACKUP_B2_KEY}@${BACKUP_B2_BUCKET}"
 
+# The path to restore eg. Documents/important-file.pdf
 restore_path="$1"
+restore_basename=$(basename $restore_path)
+
+# The path to save the restored file to
 target=$2
-target_path="${target:=~/duplicity-restore/}"
+target_path="${target:=~/duplicity-restore/$restore_basename}"
 
 duplicity -t 3D \
     --sign-key $BACKUP_GPG_KEY --encrypt-key $BACKUP_GPG_KEY \
