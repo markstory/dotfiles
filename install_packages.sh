@@ -8,14 +8,21 @@ PACKAGES=()
 
 # Basic tools
 # Remember: NeoVim and Kitty are stored in the home directory
-PACKAGES+=( "git" "fzf" "tmux" "build-essentails" "htop" "xclip" )
-PACKAGES+=( "ack" "silversearcher-ag" "pyenv" "zbar-tools" "sqlite3" )
+PACKAGES+=( "curl"  "git" "fzf" "tmux" "htop" "xclip" )
+PACKAGES+=( "ack" "silversearcher-ag" "zbar-tools" "sqlite3" )
+PACKAGES+=( "direnv" "duplicity" )
+
+# headers for building python and others
+PACKAGES+=( "build-essential" "libssl-dev" "zlib1g-dev" "libbz2-dev" "libreadline-dev" "libsqlite3-dev" )
 
 # PHP and dependencies for my PHP work.
-PACKAGES+=( "php8.1" "php8.1-curl"  "php8.1-intl" "php8.1-dom" "php8.1-sqlite3" "php8.1-xml" "php-8.1mbstring" "php8.1-memcache" "php8.1-mysql" "php8.1-pgsql")
+PACKAGES+=( "php8.3" "php8.3-curl"  "php8.3-intl" "php8.3-dom" "php8.3-sqlite3" "php8.3-xml" "php-8.3mbstring" "php8.3-memcache" "php8.3-mysql" "php8.3-pgsql")
+
+# Databases
+PACKAGES+=( "sqlite3" "mysql-server" "postgresql" )
 
 # Other runtimes and launchers.
-PACKAGES+=( "snap" "nodejs" "docker" "docker-compose" "mysql-server" )
+PACKAGES+=( "snap" "nodejs" "podman" "podman-compose" "mysql-server" )
 
 # Music and life stuff.
 PACKAGES+=( "rhythmbox" "steam" )
