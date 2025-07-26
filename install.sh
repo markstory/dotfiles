@@ -24,8 +24,9 @@ do
     fi
 done
 
-# Create ~/.config as a few things will end up there.
+# Create ~/.config and ~/.local/bin as a few things will end up there.
 mkdir -p $HOME/.config
+mkdir -p $HOME/.local/bin
 
 # Clone powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/powerlevel10k
@@ -69,12 +70,9 @@ fi
 ln -s "$DOTFILES_DIR/app_config/kitty.config" "$HOME/.config/kitty/kitty.conf"
 echo " - Linked ~/.config/kitty/kitty.conf"
 
-# Alacritty
-if [[ ! -d "$HOME/.config/alacritty" ]]; then
-    mkdir -p "$HOME/.config/alacritty"
-fi
-ln -s "$DOTFILES_DIR/app_config/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
-echo " - Linked ~/.config/alacritty/alacritty.yml"
+# Wezterm
+ln -s "$DOTFILES_DIR/app_config/wezterm.lua" "$HOME/.wezterm.lua"
+echo " - Linked ~/.wezterm.lua"
 
 echo '- Installing applications'
 if [[ "$OS_NAME" = "Darwin" ]]; then

@@ -44,7 +44,3 @@ flutter upgrade
 
 # Desktop shortcuts
 ln -s /var/lib/snapd/desktop/applications/thunderbird_thunderbird.desktop /usr/share/applications/ || true
-ln -s /home/mark/.local/kitty.app/share/applications/kitty.desktop /usr/share/applications/ || true
-
-# This contrib script is attached to `git diff`
-sudo chmod +x /usr/share/doc/git/contrib/diff-highlight/diff-highlight || true
