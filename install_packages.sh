@@ -16,7 +16,7 @@ PACKAGES+=( "direnv" "duplicity" )
 PACKAGES+=( "build-essential" "libssl-dev" "zlib1g-dev" "libbz2-dev" "libreadline-dev" "libsqlite3-dev" )
 
 # PHP and dependencies for my PHP work.
-PACKAGES+=( "php8.3" "php8.3-curl"  "php8.3-intl" "php8.3-dom" "php8.3-sqlite3" "php8.3-xml" "php-8.3mbstring" "php8.3-memcache" "php8.3-mysql" "php8.3-pgsql")
+PACKAGES+=( "php" "php-curl"  "php-intl" "php-dom" "php-sqlite3" "php-xml" "php-mbstring" "php-memcache" "php-mysql" "php-pgsql")
 
 # Databases
 PACKAGES+=( "sqlite3" "mysql-server" "postgresql" )
@@ -36,7 +36,7 @@ snap install thunderbird
 
 # Install volta and node tools
 curl https://get.volta.sh | bash
-volta install nodejs
+volta install node
 volta install yarn
 
 # Run additional configuration
