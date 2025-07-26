@@ -69,10 +69,5 @@ if [[ "$OS_NAME" = "Darwin" ]]; then
 fi
 
 if [[ "$OS_NAME" = "Linux" ]]; then
-    # Add autocompletion for fzf
-    [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
-
-    # Key bindings
-    # ------------
-    source "$HOME/.fzf/shell/key-bindings.zsh"
+    source <(fzf --zsh)
 fi
