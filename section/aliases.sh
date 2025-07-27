@@ -47,6 +47,11 @@ if [[ -x $(command -v podman) ]]; then
     alias docker='podman'
 fi
 
+# Ubuntu installs bat as batcat.
+if [[ -x $(command -v batcat) ]]; then
+    alias bat='batcat'
+fi
+
 # cross-platform clipboard
 if [[ "$OS_NAME" = "Linux" ]]; then
     alias pbcopy="xclip -se c -i"

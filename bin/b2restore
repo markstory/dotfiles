@@ -15,9 +15,17 @@ restore_basename=$(basename $restore_path)
 target=$2
 target_path="${target:=~/duplicity-restore/$restore_basename}"
 
-duplicity -t 3D \
+# For debugging what is in the current backup.
+# duplicity -t 3D \
+#     --sign-key $BACKUP_GPG_KEY --encrypt-key $BACKUP_GPG_KEY \
+#     list-current-files "$BACKUP_B2_URL"
+
+echo "restoring $restore_path to $target_path"
+# For restoring a directory or a single file
+duplicity \
+    restore \
     --sign-key $BACKUP_GPG_KEY --encrypt-key $BACKUP_GPG_KEY \
-    --file-to-restore "$restore_path" \
+     --path-to-restore "$restore_path" \
     "$BACKUP_B2_URL" "$target_path"
 
 # Unset variables

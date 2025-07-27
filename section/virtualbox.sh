@@ -1,1 +1,1 @@
-export VAGRANT_DEFAULT_PROVIDER=vagrant
+export VAGRANT_DEFAULT_PROVIDER=virtualbox

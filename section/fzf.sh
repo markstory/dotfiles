@@ -69,5 +69,5 @@ if [[ "$OS_NAME" = "Darwin" ]]; then
 fi
 
 if [[ "$OS_NAME" = "Linux" ]]; then
-    source <(fzf --zsh)
+    source <($HOME/.local/bin/fzf --zsh)
 fi
