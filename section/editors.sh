@@ -20,3 +20,6 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1
+
+# XDG config for sentry direnv
+export XDG_RUNTIME_DIR="${HOME}/.local/run"
