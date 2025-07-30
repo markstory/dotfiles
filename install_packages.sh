@@ -31,8 +31,14 @@ PACKAGES+=( "rhythmbox" "steam" )
 sudo apt install -y $PACKAGES
 
 # Install snaps and flatpaks
+snap install vivaldi
+snap install gimp
+snap install inkscape
 snap install flutter --classic
 snap install thunderbird
+
+flatpak install com.discordapp.Discord
+flatpak install com.slack.Slack
 
 # Install volta and node tools
 curl https://get.volta.sh | bash
