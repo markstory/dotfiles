@@ -2,7 +2,7 @@
 export COLORTERM="truecolor"
 
 # Grep
-export GREP_COLOR='1;33'
+export GREP_COLOR='mt=1;33'
 
 # ls colours
 export CLICOLOR=1
