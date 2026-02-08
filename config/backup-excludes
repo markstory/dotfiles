@@ -3,7 +3,6 @@
 /home/mark/.steam
 /home/mark/Trash
 /home/mark/Downloads
-/home/mark/VirtualBox VMs
 /home/mark/.local
 /home/mark/.cargo
 /home/mark/.npm
@@ -13,3 +12,5 @@
 /home/mark/.dartServer
 /home/mark/.var
 /home/mark/code/transloadit
+/home/mark/.local/share/containers
+/home/mark/VirtualBox\ VMs
