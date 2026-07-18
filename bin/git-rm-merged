@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+# Remove branches that had their heads merged.
 for branch in $(git branch --merged | grep -v '*')
 do
-    if [[ "$branch" != "master" ]]
+    if [[ "$branch" != "master" && "$branch" != "main" ]]
     then
         git branch -d "$branch"
     fi
 done
+# Clean up squash merged branches that have been pruned from upstream.
+git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == "[gone]" {print $1}' | xargs -r git branch -D
