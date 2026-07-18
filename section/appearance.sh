@@ -12,6 +12,5 @@ export LSCOLORS='Gxfxcxdxdxegedabagacad'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=248"
 
 if [[ "$TERM" = "" && "$OS_NAME" = "Linux" ]]; then
-    #export TERM=screen-256color
     export TERM=tmux-256color
 fi
