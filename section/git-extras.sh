@@ -19,7 +19,7 @@ gpull () {
 		remote="origin"
 	fi
 	git fetch -a "$remote"
-	git pull --rebase "$remote" "$head"
+	git pull --prune --rebase "$remote" "$head"
 	__git_stash_pop "$s"
 	return 0
 }
