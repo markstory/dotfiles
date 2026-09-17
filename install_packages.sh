@@ -2,13 +2,13 @@
 set -ex
 
 # The list of packages to install.
-# This list is tailored to debian/ubuntu/pop_os and will
+# This list is tailored to debian/ubuntu and will
 # require work if I ever change distros.
 PACKAGES=()
 
 # Basic tools
-# Remember: NeoVim and Kitty are stored in the home directory
-PACKAGES+=( "curl"  "git" "fzf" "tmux" "htop" "xclip" )
+# Remember: NeoVim and wezterm stored in the home directory
+PACKAGES+=( "curl"  "git" "fzf" "tmux" "htop" "wl-clipboard" )
 PACKAGES+=( "ack" "silversearcher-ag" "zbar-tools" "sqlite3" )
 PACKAGES+=( "direnv" "duplicity" )
 
@@ -31,6 +31,7 @@ PACKAGES+=( "rhythmbox" "steam" )
 sudo apt install -y $PACKAGES
 
 # Install snaps and flatpaks
+snap install firefox
 snap install vivaldi
 snap install gimp
 snap install inkscape
