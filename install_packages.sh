@@ -51,3 +51,6 @@ flutter upgrade
 
 # Desktop shortcuts
 ln -s /var/lib/snapd/desktop/applications/thunderbird_thunderbird.desktop /usr/share/applications/ || true
+
+# Make wl-clipboard work
+ln -s /run/user/1000/wayland-0 ~/.local/run/wayland-0
