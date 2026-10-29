@@ -1,0 +1,27 @@
+# Edge theme ported from https://github.com/sainnhe/edge
+#
+# 0=black, 1=red, 2=green, 3=yellow, 4=blue, 5=magenta, 6=cyan, 7=white
+# 8=b-black, 9=b-red, 10=b-green, 11=b-yellow, 12=b-blue, 13=b-magenta, 14=b-cyan, 15=b-white
+# palette = 0=#4B505B # dark grey
+palette = 0=#FAFAFA
+palette = 1=#D05858
+palette = 2=#608E32
+palette = 3=#BE7E05
+palette = 4=#5079BE
+palette = 5=#B05CCC
+palette = 6=#3A8B84
+palette = 7=#8790A0
+palette = 8=#BCC5CF
+palette = 9=#E17373
+palette = 10=#76AF6F
+palette = 11=#F0ECE2
+palette = 12=#6996E0
+palette = 13=#BF75D6
+palette = 14=#3A8B84
+palette = 15=#4B505B
+background = #FAFAFA
+foreground = #4B505B
+cursor-color = #3A8B84
+cursor-text = #EEF1F4
+selection-background = #E3EAF6
+selection-foreground = #45505B
