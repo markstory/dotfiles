@@ -7,3 +7,6 @@
  # Not exactly the same as vim/tmux, but close enough for testing.
  # theme = "One Double Light"
  theme = "edge"
+
+mouse-shift-capture = false
+
