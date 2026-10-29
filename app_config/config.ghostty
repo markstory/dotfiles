@@ -1,8 +1,8 @@
  # Adjust kerning on Jetbrains mono to tighten up the horizontal space
- adjust-cell-width = -6%
+ adjust-cell-width = -7%
 
  font-family = "JetBrains Mono"
  font-size = 11
 
  # Not exactly the same as vim/tmux, but close enough for testing.
- theme = "Light Owl"
+ theme = "One Double Light"
